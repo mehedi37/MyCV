@@ -1,0 +1,220 @@
+\documentclass[10pt, a4paper]{article}
+
+% PACKAGES ===================================================
+\usepackage[a4paper, margin=0.75in]{geometry} % Page margins
+\usepackage{amsmath}                          % Math symbols
+\usepackage{amsfonts}                         % Math fonts
+\usepackage{amssymb}                          % Math symbols
+\usepackage{graphicx}                         % Include graphics
+\usepackage[utf8]{inputenc}                   % Input encoding
+\usepackage[T1]{fontenc}                      % Font encoding
+\usepackage{lmodern}                          % Use Latin Modern font (good default)
+\usepackage{hyperref}                         % Clickable links
+\usepackage{xcolor}                           % Color support
+\usepackage{titlesec}                         % Section formatting
+\usepackage{enumitem}                         % Custom lists
+\usepackage{fontawesome5}                     % Icons (optional, requires fontawesome5 package)
+
+% COLOR DEFINITIONS (Optional - customize as needed) =================
+\definecolor{primary}{HTML}{2b2b2b}  % Dark grey for text
+\definecolor{secondary}{HTML}{0e76a8} % Professional LinkedIn blue for better visibility
+\definecolor{sectionrule}{HTML}{DDDDDD} % Light grey for rules
+
+% HYPERLINK SETUP =============================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={MD. Mehedi Hasan Maruf - Resume},
+    pdfauthor={MD. Mehedi Hasan Maruf},
+    pdfsubject={Software Engineer Resume},
+    pdfkeywords={Software Engineer, Full-Stack, Python, Node.js, React, AI}
+}
+
+% FONT SETUP (Latin Modern is default, alternatives below) ======
+% \usepackage{lato} % Example: Use Lato font
+% \renewcommand*\familydefault{\sfdefault} % Make sans-serif the default if using Lato/similar
+
+% PAGE STYLE ==================================================
+\pagestyle{empty} % No page numbers
+\setlength{\parindent}{0pt} % No paragraph indentation
+\setlength{\parskip}{0.5em} % Space between paragraphs
+
+% SECTION FORMATTING ==========================================
+\titleformat{\section}
+  {\Large\bfseries\color{secondary}} % Format: Large, bold, accent color
+  {} % Label
+  {0em} % Separation between label and title
+  {} % Code before title
+  [\titlerule] % Code after title (horizontal rule)
+\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{1.0ex plus .2ex}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{primary}} % Format: large, bold, primary color
+  {} % Label
+  {0em} % Separation
+  {} % Code before
+\titlespacing*{\subsection}{0pt}{1ex plus .5ex minus .2ex}{0.5ex plus .2ex}
+
+% CUSTOM COMMANDS (Optional) =================================
+\newcommand{\datedsubsection}[2]{%
+  \subsection*{#1 \hfill \small\textit{#2}}% Hides subsection number, adds date to the right
+}
+
+\newcommand{\resitem}[1]{\item #1} % Simple list item
+
+% Make lists tighter
+\setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+\setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+
+% HEADER ======================================================
+\newcommand{\header}[8]{ % Added one argument for website URL placeholder
+  \begin{center}
+    {\Huge\bfseries\color{primary} #1}\\[0.2em] % Name
+    {\Large\color{secondary} #2}\\[1em] % Title
+    \small % Contact info
+    \faPhone* \href{tel:#3}{#3} \quad | \quad
+    \faEnvelope \href{mailto:#4}{\hspace{0.5mm}#4} \quad | \quad
+    \faMapMarker {\hspace{1mm}#5 (#6)} \\ % Line break for better spacing if needed
+    \faLinkedin \href{#7}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
+    \faGithub \href{#8}{\hspace{0.5mm}mehedi37}
+    % --- Uncomment and add your website below ---
+    % \quad | \quad \faGlobe \href{https://your-website.com}{your-website.com}
+  \end{center}
+  \vspace{1em}
+}
+
+% DOCUMENT START =============================================
+\begin{document}
+\color{primary} % Default text color
+
+% --- Header ---
+\header{MD. Mehedi Hasan Maruf} % Name
+       {Software Engineer} % Title
+       {+8801747090362} % Phone
+       {mjmehedihasanoo7@gmail.com} % Email
+       {Rajshahi} % City
+       {Bangladesh} % Country
+       {https://www.linkedin.com/in/mehedi-hasanmaruf} % LinkedIn URL
+       {https://github.com/mehedi37} % GitHub URL
+
+% --- Summary ---
+\section*{Summary}
+Extremely motivated Python software developer with specialisation in full-stack web development using Django and FastAPI and Node.js (React, Next.js). Looking to make cutting edge, scalable applications and tackle challenging
+problems. Combines sound programming techniques and algorithmic design methodologies with practical experience in CI/CD, databases, and AI integration. Excited to leverage tech skills to tackle complicated projects and drive real-world impact in a growth role
+
+% --- Skills ---
+\section{Skills}
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
+    \item[Programming Languages:] Python, JavaScript, TypeScript, C++, Java, PHP, Kotlin, Bash
+    \item[Web Technologies:] Node.js, React.js, Next.js, Python FastAPI, Django, Angular, PHP Laravel
+    \item[Databases:] MySQL, PostgreSQL, Supabase, Prisma
+    \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Bitbucket, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Prisma), Project Management, Problem Solving
+    \item[AI/ML:] LangGraph, Semantic Analysis, Natural Language Processing, Speech Recognition, Experience with ChatGPT \& LLAMA 2 integration
+    \item[Other:] Redis
+\end{description}
+
+% --- Experience ---
+\section{Experience}
+
+\datedsubsection{Full Stack Developer}{Jan 2025 -- Present}
+\textit{Aamira Software Solutions}, Kokomo, Indiana, USA
+\begin{itemize}
+    \resitem{Led development of a customer relationship management system that increased client response rates.}
+    \resitem{Architected and implemented a microservice backend solution using Node.js that reduced API response time.}
+    \resitem{Optimized database queries using Prisma, resulting in a 35\% improvement in application performance.}
+\end{itemize}
+
+\datedsubsection{AI Code Reviewer}{Oct 2024 -- Jan 2025}
+\textit{Outlier}
+\begin{itemize}
+    \resitem{Reviewed and improved code quality for AI systems serving 50,000+ daily users.}
+    \resitem{Implemented automated testing procedures that reduced bug rates by 22\% across the platform.}
+    \resitem{Collaborated with senior developers to establish best practices for AI model integration.}
+\end{itemize}
+
+\datedsubsection{Industrial Trainee}{Feb 2025 -- Mar 2025}
+\textit{Brain Station 23}, Dhaka, Bangladesh
+\begin{itemize}
+    \resitem{Gained practical experience in enterprise software development methodology and practices.}
+    \resitem{Served as Team Representative for a 15-person cohort, coordinating communication between management and trainees.}
+    \resitem{Contributed to a student AI system using Next and Node.js that was deployed to online server.}
+\end{itemize}
+
+\datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
+\textit{Code Studio}, Rajshahi, Bangladesh
+\begin{itemize}
+    \resitem{Developed and maintained web backends supporting 15,000+ daily users using JavaScript, TypeScript, and Python (Django).}
+    \resitem{Managed and maintained 12 Virtual Private Servers (Linux), achieving 99.8\% uptime over a two-year period.}
+    \resitem{Established and optimized CI/CD pipelines that reduced deployment time by 40\% (GitHub Actions, Bitbucket, Netlify).}
+    \resitem{Implemented Docker containerization that simplified deployment across 5 different client environments.}
+\end{itemize}
+
+\datedsubsection{Competitive Programming Teacher}{Aug 2023 -- Nov 2023}
+\textit{RAPL (University Organization)}
+\begin{itemize}
+    \resitem{Instructed RUET students in competitive programming concepts and algorithms, with 80\% showing improved contest performance.}
+    \resitem{Developed curriculum covering number theory (GCD, Fermat's Little Theorem) and graph traversal (BFS, DFS).}
+    \resitem{Organized biweekly coding competitions to reinforce practical application of theoretical concepts.}
+\end{itemize}
+
+% --- Projects ---
+\section{Personal Projects}
+
+\datedsubsection{ProjectPika - Virtual Voice Assistant}{Sep 2020 -- Mar 2022}
+\textit{Repository:} \href{https://github.com/mehedi37/projectPika}{github.com/mehedi37/projectPika}
+\begin{itemize}
+    \resitem{Developed a custom voice assistant using Python, incorporating NLP, speech recognition, and AI.}
+    \resitem{Implemented multi-language recognition with English translation capabilities.}
+    \resitem{Engineered a flexible command system for tasks like weather checks and scheduling.}
+    \resitem{Integrated both ChatGPT and local LLAMA 2 models for enhanced AI interaction.}
+    \resitem{Enabled direct schedule retrieval from online Google Sheets via voice commands.}
+\end{itemize}
+
+\datedsubsection{Thesis Site}{Apr 2024 -- Apr 2024}
+\textit{Repository:} \href{https://github.com/mehedi37/Thesis_Site}{github.com/mehedi37/Thesis\_Site}
+\begin{itemize}
+    \resitem{Developed a full-featured academic thesis management platform using Django.}
+    \resitem{Implemented role-based access control system supporting 200+ concurrent users (students, faculty, and administrators).}
+    \resitem{Engineered automated document verification process using Django's ORM that eliminated manual verification steps.}
+    \resitem{Integrated with university authentication systems using OAuth for seamless single sign-on experience.}
+\end{itemize}
+
+% --- Education ---
+\section{Education}
+
+\datedsubsection{B.Sc. Engineering, Computer Science and Engineering}{Mar 2022 -- Present}
+\textit{Rajshahi University of Engineering \& Technology (RUET)}, Rajshahi, Bangladesh
+\begin{itemize}
+    \resitem{Current Semester: 6th semester}
+    \resitem{CGPA: 3.73 (till 5th semester)}
+\end{itemize}
+
+% \datedsubsection{Higher Secondary Certificate (H.S.C), Science}{Mar 2018 -- Feb 2020}
+% \textit{Police Lines School \& College}, Rangpur, Bangladesh
+
+% \datedsubsection{Secondary School Certificate (S.S.C), Science}{Jan 2016 -- Jan 2018}
+% \textit{Police Lines School \& College}, Rangpur, Bangladesh
+
+
+% --- Certifications ---
+\section{Certifications}
+\begin{itemize}
+    \resitem{PHP (Laravel) - EDGE Project: \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{View Certificate} (Feb 2025)}
+    \resitem{Python (Basic) - HackerRank: \href{https://www.hackerrank.com/certificates/0550b52e4c2b}{View Certificate} (Jun 2023)}
+    \resitem{Code Smash - Competitive Programming Contest Participant (Mar 2023)}
+\end{itemize}
+
+% --- Languages ---
+\section{Languages}
+\begin{itemize}
+    \resitem{Bangla (Native)}
+    \resitem{English (Full Professional Proficiency)}
+\end{itemize}
+
+% --- Interests ---
+\section{Interests}
+Artificial Intelligence, Machine Learning, Full-Stack Development (Node.js, Python), Competitive Programming, Cloud Technologies, Open Source Contribution
+
+% DOCUMENT END ===============================================
+\end{document}
