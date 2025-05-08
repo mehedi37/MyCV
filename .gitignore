@@ -271,3 +271,4 @@ TSWLatexianTemp*
 .vscode/*
 *.vscode
 *copy*
+*.gz
