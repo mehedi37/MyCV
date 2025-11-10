@@ -68,16 +68,17 @@
 \setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
 
 % HEADER ======================================================
-\newcommand{\header}[8]{ % Added one argument for website URL placeholder
+\newcommand{\header}[9]{ % Added argument for WhatsApp
   \begin{center}
     {\Huge\bfseries\color{primary} #1}\\[0.2em] % Name
     {\Large\color{secondary} #2}\\[1em] % Title
     \small % Contact info
     \faPhone* \href{tel:#3}{#3} \quad | \quad
-    \faEnvelope \href{mailto:#4}{\hspace{0.5mm}#4} \quad | \quad
-    \faMapMarker {\hspace{1mm}#5 (#6)} \\ % Line break for better spacing if needed
-    \faLinkedin \href{#7}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
-    \faGithub \href{#8}{\hspace{0.5mm}mehedi37}
+    \faWhatsapp \href{https://wa.me/#4}{#4} \quad | \quad
+    \faEnvelope \href{mailto:#5}{\hspace{0.5mm}#5} \quad | \quad
+    \faMapMarker {\hspace{1mm}#6 (#7)} \\ % Line break for better spacing if needed
+    \faLinkedin \href{#8}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
+    \faGithub \href{#9}{\hspace{0.5mm}mehedi37}
     % --- Uncomment and add your website below ---
     % \quad | \quad \faGlobe \href{https://your-website.com}{your-website.com}
   \end{center}
@@ -92,6 +93,7 @@
 \header{MD. Mehedi Hasan Maruf} % Name
        {Software Engineer} % Title
        {+8801747090362} % Phone
+       {+8801533300089} % WhatsApp
        {mjmehedihasanoo7@gmail.com} % Email
        {Rajshahi} % City
        {Bangladesh} % Country
@@ -159,18 +161,19 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 % --- Projects ---
 \section{Personal Projects}
 
-\datedsubsection{BareMinimum Chatbot - Full Stack AI Application}{Feb 2025 -- Mar 2025}
-\textit{Repository:} \href{https://github.com/mehedi37/BareMinimumChatBot}{BareMinimumChatBot} \textit{(Backend)}, \href{https://github.com/mehedi37/bare-minimum-bot}{bare-minimum-bot} \textit{(Frontend)}
+\datedsubsection{StudentAI - Intelligent Learning Companion}{Feb 2025 -- Mar 2025}
+\textit{Repository:} \href{https://github.com/mehedi37/student_AI}{student\_AI} \textit{(Backend)}, \href{https://github.com/mehedi37/student_ai_next}{student\_ai\_next} \textit{(Frontend)} | \textit{Live:} \href{https://student-ai-next.vercel.app/}{student-ai-next.vercel.app}
 \begin{itemize}
-    \resitem{Developed during industrial attachment at Brain Station 23: FastAPI backend with RESTful endpoints for AI-powered chat, content summarization, and quiz generation.}
-    \resitem{Implemented local LLM integration (Ollama) for privacy-focused AI interactions and created a responsive Next.js frontend with modern UI.}
-    \resitem{Built advanced content processing features including YouTube summarization, PDF analysis, and intelligent quiz generation.}
+    \resitem{Developed during industrial attachment at Brain Station 23: AI-powered learning assistant combining \textbf{FastAPI backend} with \textbf{Next.js frontend} for personalized education.}
+    \resitem{Implemented intelligent quiz generation, document Q\&A, and YouTube content analysis using LangChain and semantic search with conversation memory.}
+    \resitem{Built comprehensive document processing pipeline supporting PDFs, images, and videos with real-time WebSocket chat, JWT authentication, and progress tracking.}
+    \resitem{Deployed production-ready application on Vercel (frontend) and Render (backend) with Supabase database integration.}
 \end{itemize}
 
 \datedsubsection{Hotel Management System}{Jan 2024 -- Mar 2024}
 \textit{Repository:} \href{https://github.com/mehedi37/hotel_management}{github.com/mehedi37/hotel\_management}
 \begin{itemize}
-    \resitem{Developed PHP-Laravel hotel management system with secure authentication, CSRF protection, and SQL injection prevention.}
+    \resitem{Developed \textbf{PHP-Laravel} hotel management system with secure authentication, CSRF protection, and SQL injection prevention.}
     \resitem{Built responsive Bootstrap UI interface with comprehensive CRUD operations for efficient room management and bookings.}
     \resitem{Deployed with 99.8\% uptime on live server with multi-user support as final project for EDGE programming course.}
 \end{itemize}
@@ -178,7 +181,7 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \datedsubsection{Gamers Heaven - E-commerce Platform}{Dec 2023 -- Feb 2024}
 \textit{Repository:} \href{https://github.com/mehedi37/gamers_heaven}{github.com/mehedi37/gamers\_heaven}
 \begin{itemize}
-    \resitem{Built full-featured gaming e-commerce platform (ASP.NET Core MVC with C\#) with secure role-based access control.}
+    \resitem{Built full-featured gaming e-commerce platform (\textbf{ASP.NET Core MVC with C\#}) with secure role-based access control.}
     \resitem{Implemented Entity Framework Core with code-first approach for database management and migrations.}
     \resitem{Developed comprehensive shopping cart system with product management, payment processing, and responsive Bootstrap UI.}
 \end{itemize}
@@ -203,8 +206,8 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 % --- Certifications ---
 \section{Certifications \& Achievements}
 \begin{itemize}
+    \resitem{Digital Accessibility Training (DAT) - a2i (Aspire to Innovate), Govt. of Bangladesh: \href{https://www.linkedin.com/feed/update/urn:li:activity:7392734775683252224/}{View Post} (Oct 2025)}
     \resitem{PHP (Laravel) - EDGE Project: \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{View Certificate} (Feb 2025)}
-    \resitem{Python (Basic) - HackerRank: \href{https://www.hackerrank.com/certificates/0550b52e4c2b}{View Certificate} (Jun 2023)}
     \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest (March 2023)}
     \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest (Oct 2022)}
 \end{itemize}
@@ -214,11 +217,12 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \begin{itemize}
     \resitem{Bangla (Native)}
     \resitem{English (Full Professional Proficiency)}
+    \resitem{Japanese (A1 level)}
 \end{itemize}
 
 % --- Interests ---
 \section{Interests}
-Artificial Intelligence, Machine Learning, Full-Stack Development (Node.js, Python), Competitive Programming, Cloud Technologies, Open Source Contribution
+3D Design, Artificial Intelligence, Machine Learning, Full-Stack Development (Node.js, Python), Competitive Programming, Cloud Technologies, Open Source Contribution
 
 % DOCUMENT END ===============================================
 \end{document}
