@@ -7,6 +7,9 @@ on:
       - "**.tex"
   workflow_dispatch: # Allow manual trigger
 
+permissions:
+  contents: write  # Required so the bot can commit the PDF back
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,8 +22,8 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: Meek_CV.tex
-          latexmk_use_xelatex: true   # uses pdflatex by default
-          args: -pdf -interaction=nonstopmode -halt-on-error
+          latexmk_use_xelatex: true
+          args: -interaction=nonstopmode -halt-on-error  # no -pdf flag: xelatex handles output format itself
 
       - name: Commit PDF to repository
         uses: stefanzweifel/git-auto-commit-action@v5
