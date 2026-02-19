@@ -19,7 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: Meek_CV.tex
-          latexmk_use_xelatex: false   # uses pdflatex by default
+          latexmk_use_xelatex: true   # uses pdflatex by default
           args: -pdf -interaction=nonstopmode -halt-on-error
 
       - name: Commit PDF to repository
