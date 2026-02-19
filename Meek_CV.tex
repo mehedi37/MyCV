@@ -56,6 +56,12 @@
   {} % Code before
 \titlespacing*{\subsection}{0pt}{0.8ex plus .5ex minus .2ex}{0.3ex plus .2ex}
 
+% COMPANY URLs (Update links here) ===========================
+\newcommand{\urlAamira}{https://aamira.ca/}
+\newcommand{\urlOutlier}{https://www.linkedin.com/company/try-outlier/}
+\newcommand{\urlBrainStation}{https://brainstation-23.com/}
+\newcommand{\urlCodeStudio}{https://www.linkedin.com/company/code-studio4/}
+
 % CUSTOM COMMANDS (Optional) =================================
 \newcommand{\datedsubsection}[2]{%
   \subsection*{#1 \hfill \small\textit{#2}}% Hides subsection number, adds date to the right
@@ -101,18 +107,18 @@
        {https://github.com/mehedi37} % GitHub URL
 
 % --- Summary ---
-\section*{Summary}
-Extremely motivated software engineer with specialization in full-stack web development using Django and FastAPI and Node.js (React, Next.js). Looking to make cutting edge, scalable applications and tackle challenging
-problems. Combines sound programming techniques and algorithmic design methodologies with practical experience in CI/CD, databases, and AI integration. Excited to leverage tech skills to tackle complicated projects and drive real-world impact in a growth role
+% \section*{Summary}
+% Extremely motivated software engineer with specialization in full-stack web development using Django and FastAPI and Node.js (React, Next.js). Looking to make cutting-edge, scalable applications and tackle challenging
+% problems. Combines sound programming techniques and algorithmic design methodologies with practical experience in CI/CD, databases, and AI integration. Excited to leverage tech skills to tackle complicated projects and drive real-world impact in a growth role
 
 % --- Skills ---
 \section{Skills}
 \begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
-    \item[Programming Languages:] Python, JavaScript, TypeScript, C++, Java, PHP, Kotlin, Bash
+    \item[Programming Languages:] Python, JavaScript, TypeScript, C++, Java, PHP, Bash
     \item[Web Technologies:] Node.js, React.js, Next.js, Python FastAPI, Django, Angular, PHP Laravel
-    \item[Databases:] MySQL, PostgreSQL, Supabase, Prisma
-    \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Bitbucket, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Prisma), Project Management, Problem Solving
-    \item[AI/ML:] LangGraph, Semantic Analysis, Natural Language Processing, Speech Recognition, Experience with ChatGPT \& LLAMA 2 integration
+    \item[Databases:] MySQL, PostgreSQL, MongoDB, Supabase
+    \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Project Management, Problem Solving
+    \item[AI/ML:] LangChain, Semantic Analysis, NLP
     \item[Other:] Redis
 \end{description}
 
@@ -120,41 +126,40 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \section{Experience}
 
 \datedsubsection{Full Stack Developer}{Jan 2025 -- Present}
-\textit{Aamira Software Solutions}, Kokomo, Indiana, USA
+\textit{Aamira Software Solutions} \href{\urlAamira}{\small\faExternalLink*}, Kokomo, Indiana, USA
 \begin{itemize}
     \resitem{Led development of a customer relationship management system that increased client response rates.}
-    \resitem{Architected and implemented a microservice backend solution using Node.js that reduced API response time.}
-    \resitem{Optimized database queries using Prisma, resulting in a 35\% improvement in application performance.}
+    \resitem{Architected and implemented a Node.js microservice backend solution that reduced API response time.}
+    \resitem{Optimized database queries using Supabase, resulting in significant improvements in application performance.}
 \end{itemize}
 
 \datedsubsection{AI Code Reviewer}{Oct 2024 -- Jan 2025}
-\textit{Outlier}
+\textit{Outlier} \href{\urlOutlier}{\small\faExternalLink*}
 \begin{itemize}
     \resitem{Reviewed and improved code quality for AI systems serving 50,000+ daily users.}
-    \resitem{Implemented automated testing procedures that reduced bug rates by 22\% across the platform.}
     \resitem{Collaborated with senior developers to establish best practices for AI model integration.}
 \end{itemize}
 
 \datedsubsection{Industrial Trainee}{Feb 2025 -- Mar 2025}
-\textit{Brain Station 23}, Dhaka, Bangladesh
+\textit{Brain Station 23} \href{\urlBrainStation}{\small\faExternalLink*}, Dhaka, Bangladesh
 \begin{itemize}
     \resitem{Gained practical experience in enterprise software development methodology and practices.}
     \resitem{Served as Team Representative for a 15-person cohort, coordinating communication between management and trainees.}
-    \resitem{Contributed to a student AI system using Next and Node.js that was deployed to online server.}
+    \resitem{Contributed to a student AI system using Next and Node.js that was deployed to an online server.}
 \end{itemize}
 
 \datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
-\textit{Code Studio}, Rajshahi, Bangladesh
+\textit{Code Studio} \href{\urlCodeStudio}{\small\faExternalLink*}, Rajshahi, Bangladesh
 \begin{itemize}
-    \resitem{Developed backends supporting 15,000+ daily users using JavaScript, TypeScript, and Python (Django).}
-    \resitem{Managed 12 VPS (Linux) with 99.8\% uptime and optimized CI/CD pipelines reducing deployment time by 40\%.}
-    \resitem{Implemented Docker containerization simplifying deployment across 5 different client environments.}
+    \resitem{Developed backends supporting thousands of daily users using JavaScript, TypeScript, and Python (Django).}
+    \resitem{Managed 12 VPS (Linux) with 99.8\% uptime and optimized CI/CD pipelines, reducing deployment time by 40\%.}
+    \resitem{Implemented Docker containerization, simplifying deployment across 5 different client environments.}
 \end{itemize}
 
-\datedsubsection{Competitive Programming Teacher}{Aug 2023 -- Nov 2023}
+\datedsubsection{Competitive Programming Mentor}{Aug 2023 -- Nov 2023}
 \textit{RAPL (University Organization)}
 \begin{itemize}
-    \resitem{Instructed RUET students in competitive programming concepts, with 80\% showing improved contest performance.}
+    \resitem{Instructed RUET students in competitive programming concepts.}
     \resitem{Developed curriculum covering number theory and graph traversal algorithms; organized biweekly coding competitions.}
 \end{itemize}
 
@@ -166,7 +171,7 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \begin{itemize}
     \resitem{Developed during industrial attachment at Brain Station 23: AI-powered learning assistant combining \textbf{FastAPI backend} with \textbf{Next.js frontend} for personalized education.}
     \resitem{Implemented intelligent quiz generation, document Q\&A, and YouTube content analysis using LangChain and semantic search with conversation memory.}
-    \resitem{Built comprehensive document processing pipeline supporting PDFs, images, and videos with real-time WebSocket chat, JWT authentication, and progress tracking.}
+    \resitem{Built a comprehensive document processing pipeline supporting PDFs, images, and videos with real-time WebSocket chat, JWT authentication, and progress tracking.}
     \resitem{Deployed production-ready application on Vercel (frontend) and Render (backend) with Supabase database integration.}
 \end{itemize}
 
@@ -174,8 +179,7 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \textit{Repository:} \href{https://github.com/mehedi37/hotel_management}{github.com/mehedi37/hotel\_management}
 \begin{itemize}
     \resitem{Developed \textbf{PHP-Laravel} hotel management system with secure authentication, CSRF protection, and SQL injection prevention.}
-    \resitem{Built responsive Bootstrap UI interface with comprehensive CRUD operations for efficient room management and bookings.}
-    \resitem{Deployed with 99.8\% uptime on live server with multi-user support as final project for EDGE programming course.}
+    \resitem{Built a responsive Bootstrap UI interface with comprehensive CRUD operations for efficient room management and bookings.}
 \end{itemize}
 
 \datedsubsection{Gamers Heaven - E-commerce Platform}{Dec 2023 -- Feb 2024}
@@ -183,7 +187,7 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \begin{itemize}
     \resitem{Built full-featured gaming e-commerce platform (\textbf{ASP.NET Core MVC with C\#}) with secure role-based access control.}
     \resitem{Implemented Entity Framework Core with code-first approach for database management and migrations.}
-    \resitem{Developed comprehensive shopping cart system with product management, payment processing, and responsive Bootstrap UI.}
+    \resitem{Developed a comprehensive shopping cart system with product management, payment processing, and responsive Bootstrap UI.}
 \end{itemize}
 
 % --- Education ---
@@ -192,8 +196,8 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 \datedsubsection{B.Sc. Engineering, Computer Science and Engineering}{Mar 2022 -- Present}
 \textit{Rajshahi University of Engineering \& Technology (RUET)}, Rajshahi, Bangladesh
 \begin{itemize}
-    \resitem{Current Semester: 6th semester}
-    \resitem{CGPA: 3.73 (till 5th semester)}
+    \resitem{Current Semester: 8th semester}
+    \resitem{CGPA: 3.77 (till 7th semester)}
 \end{itemize}
 
 % \datedsubsection{Higher Secondary Certificate (H.S.C), Science}{Mar 2018 -- Feb 2020}
@@ -206,23 +210,25 @@ problems. Combines sound programming techniques and algorithmic design methodolo
 % --- Certifications ---
 \section{Certifications \& Achievements}
 \begin{itemize}
-    \resitem{Digital Accessibility Training (DAT) - a2i (Aspire to Innovate), Govt. of Bangladesh: \href{https://www.linkedin.com/feed/update/urn:li:activity:7392734775683252224/}{View Post} (Oct 2025)}
-    \resitem{PHP (Laravel) - EDGE Project: \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{View Certificate} (Feb 2025)}
-    \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest (March 2023)}
-    \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest (Oct 2022)}
+    \resitem{Digital Accessibility Training (DAT) - a2i (Aspire to Innovate), Govt. of Bangladesh \href{https://drive.google.com/file/d/1r0YTwNWt2G--afHjJkN7hf9taI2d445W/view?usp=sharing}{\faExternalLink*} (Oct 2025)}
+    \resitem{Industrial Training Certificate - Brain Station 23 \href{https://drive.google.com/file/d/1_Smp7BMAuuKgN4McPJv-UFcsK27mXtBj/view?usp=sharing}{\faExternalLink*} (Mar 2025)}
+    \resitem{PHP (Laravel) - EDGE Project \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{\faExternalLink*} (Feb 2025)}
+    \resitem{Experience Certificate - Code Studio \href{https://drive.google.com/file/d/195bms3HX2eF-QGjPypnlaZmQLn2nv7xT/view?usp=sharing}{\faExternalLink*} (Apr 2024)}
+    \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} (Mar 2023)}
+    \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} (Oct 2022)}
 \end{itemize}
 
 % --- Languages ---
-\section{Languages}
-\begin{itemize}
-    \resitem{Bangla (Native)}
-    \resitem{English (Full Professional Proficiency)}
-    \resitem{Japanese (A1 level)}
-\end{itemize}
+% \section{Languages}
+% \begin{itemize}
+%     \resitem{Bangla (Native)}
+%     \resitem{English (Full Professional Proficiency)}
+%     \resitem{Japanese (A1 level)}
+% \end{itemize}
 
 % --- Interests ---
-\section{Interests}
-3D Design, Artificial Intelligence, Machine Learning, Full-Stack Development (Node.js, Python), Competitive Programming, Cloud Technologies, Open Source Contribution
+% \section{Interests}
+% 3D Design, Artificial Intelligence, Machine Learning, Full-Stack Development (Node.js, Python), Competitive Programming, Cloud Technologies, Open Source Contribution
 
 % DOCUMENT END ===============================================
 \end{document}

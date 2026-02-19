@@ -1,0 +1,31 @@
+name: Build and Commit PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.tex"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Meek_CV.tex
+          latexmk_use_xelatex: false   # uses pdflatex by default
+          args: -pdf -interaction=nonstopmode -halt-on-error
+
+      - name: Commit PDF to repository
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "ci: update compiled CV PDF [skip ci]"
+          file_pattern: "*.pdf"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
