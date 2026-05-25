@@ -28,7 +28,7 @@
     pdftitle={MD. Mehedi Hasan Maruf - Resume},
     pdfauthor={MD. Mehedi Hasan Maruf},
     pdfsubject={Software Engineer Resume},
-    pdfkeywords={Software Engineer, Full-Stack, Python, Node.js, React, AI}
+    pdfkeywords={Software Engineer, Full-Stack, Node.js, NestJS, TypeScript, React, AI}
 }
 
 % FONT SETUP (Latin Modern is default, alternatives below) ======
@@ -94,7 +94,6 @@
 % DOCUMENT START =============================================
 \begin{document}
 \color{primary} % Default text color
-
 % --- Header ---
 \header{MD. Mehedi Hasan Maruf} % Name
        {Software Engineer} % Title
@@ -105,25 +104,21 @@
        {Bangladesh} % Country
        {https://www.linkedin.com/in/mehedi-hasanmaruf} % LinkedIn URL
        {https://github.com/mehedi37} % GitHub URL
-
 % --- Summary ---
 % \section*{Summary}
 % Extremely motivated software engineer with specialization in full-stack web development using Django and FastAPI and Node.js (React, Next.js). Looking to make cutting-edge, scalable applications and tackle challenging
 % problems. Combines sound programming techniques and algorithmic design methodologies with practical experience in CI/CD, databases, and AI integration. Excited to leverage tech skills to tackle complicated projects and drive real-world impact in a growth role
-
 % --- Skills ---
 \section{Skills}
 \begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
     \item[Programming Languages:] Python, JavaScript, TypeScript
-    \item[Web Technologies:] Node.js, React.js, Angular, Next.js, FastAPI, Django
+    \item[Web Technologies:] Node.js, NestJS, Express.js, React.js, Angular, Next.js, FastAPI, Django, .NET
     \item[Databases:] MySQL, PostgreSQL, MongoDB, Supabase
     \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Pydantic, Project Management, Problem Solving
     \item[AI/ML:] LangChain, Hugging Face Transformers, Semantic Analysis, NLP
 \end{description}
-
 % --- Experience ---
 \section{Experience}
-
 \datedsubsection{Full Stack Developer}{Jan 2025 -- Present}
 \textit{Aamira Software Solutions} \href{\urlAamira}{\small\faExternalLink*}, Kokomo, Indiana, USA
 \begin{itemize}
@@ -131,14 +126,12 @@
     \resitem{Architected and implemented a Typescript microservice backend solution that reduced API response time.}
     \resitem{Optimized database queries using Supabase, resulting in significant improvements in application performance.}
 \end{itemize}
-
 \datedsubsection{AI Code Reviewer}{Oct 2024 -- Jan 2026}
 \textit{Outlier} \href{\urlOutlier}{\small\faExternalLink*}
 \begin{itemize}
     \resitem{Reviewed and improved code quality for AI systems serving 50,000+ daily users.}
     \resitem{Collaborated with senior developers to establish best practices for AI model integration.}
 \end{itemize}
-
 \datedsubsection{Industrial Trainee}{Feb 2025 -- Mar 2025}
 \textit{Brain Station 23} \href{\urlBrainStation}{\small\faExternalLink*}, Dhaka, Bangladesh
 \begin{itemize}
@@ -146,7 +139,6 @@
     \resitem{Served as Team Representative for a 15-person cohort, coordinating communication between management and trainees.}
     \resitem{Contributed to a student AI system using Next and Node.js that was deployed to an online server.}
 \end{itemize}
-
 \datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
 \textit{Code Studio} \href{\urlCodeStudio}{\small\faExternalLink*}, Rajshahi, Bangladesh
 \begin{itemize}
@@ -154,17 +146,14 @@
     \resitem{Managed 12 VPS (Linux) with 99.8\% uptime and optimized CI/CD pipelines, reducing deployment time by 40\%.}
     \resitem{Implemented Docker containerization, simplifying deployment across 5 different client environments.}
 \end{itemize}
-
 \datedsubsection{Competitive Programming Mentor}{Aug 2023 -- Nov 2023}
 \textit{RAPL (University Organization)}
 \begin{itemize}
     \resitem{Instructed RUET students in competitive programming concepts.}
     \resitem{Developed curriculum covering number theory and graph traversal algorithms; organized biweekly coding competitions.}
 \end{itemize}
-
 % --- Projects ---
 \section{Personal Projects}
-
 \datedsubsection{StudentAI - Intelligent Learning Companion}{Feb 2025 -- Mar 2025}
 \textit{Read More:} \href{https://www.mehedi-hasan-maruf.me/projects/student-ai}{\faExternalLink*}
 \begin{itemize}
@@ -174,19 +163,20 @@
     \resitem{Deployed production-ready application on Vercel (frontend) and Render (backend) with Supabase database integration.}
 \end{itemize}
 
-\datedsubsection{Thesis Site (Django)}{March 2024 -- May 2024}
-\textit{Read More:} \href{https://www.mehedi-hasan-maruf.me/projects/thesis-website-django}{\faExternalLink*}
+\datedsubsection{Omnious -- Visual Debugging Platform}{Nov 2025 -- Present}
+\textit{Read More:} \href{https://www.mehedi-hasan-maruf.me/projects/omnious}{\faExternalLink*}
 \begin{itemize}
-    \resitem{Developed \textbf{PYTHON-Django} thesis topic post. Supervisor and students can communicate better way.}
-    \resitem{Built a responsive Bootstrap UI interface with comprehensive CRUD operations for efficient communication between student(s), supervisor, authority.}
+    \resitem{Building a full-stack visual debugging platform with interactive code-graph visualization, real-time trace animation, error heatmaps, and \textbf{AI-powered} chat-based debugging.}
+    \resitem{Engineered a scalable \textbf{Node.js} backend using \textbf{Fastify 5} and \textbf{tRPC v11} with \textbf{TypeScript}, integrated with a \textbf{Next.js 16}/\textbf{React 19} frontend in a \textbf{Turborepo} monorepo.}
+    \resitem{Integrated \textbf{PostgreSQL 15} with \textbf{pgvector}, \textbf{ltree}, and \textbf{pg\_trgm} via \textbf{Supabase} for semantic search and hierarchical data; implemented Row-Level Security (RLS).}
+    \resitem{Containerized the full-stack application using \textbf{Docker Compose} with multi-stage builds; automated deployment via \textbf{GitHub Actions} CI/CD pipeline.}
 \end{itemize}
 
 % --- Research ---
 \section{Research}
 
 \datedsubsection{TRACE: Neuro-Symbolic Curriculum Bottleneck Detection}{2025 -- Present}
-\textit{Under Submission -- IEEE ICDM 2026 (Applied Track)} \quad
-\href{https://github.com/mehedi37/research_course_bottleneck}{\faGithub\hspace{0.5mm}GitHub}
+\textit{Under Submission -- IEEE ICDM 2026 (Applied Track)}
 \begin{itemize}
     \resitem{Designing a neuro-symbolic framework uniting \textbf{SBERT} embeddings, aspect-based sentiment analysis (VADER + DeBERTa), and \textbf{DoWhy} causal inference to automatically detect curriculum bottlenecks at four levels of granularity: program, course, topic, and student.}
     \resitem{Built a multimodal pipeline fusing university syllabi, grade records, and student feedback into a curriculum knowledge graph (NetworkX), validated on two independent datasets: RUET CSE and OULAD (32,593 students, 7 modules).}
@@ -204,13 +194,6 @@
     \resitem{CGPA: 3.77 (till 7th semester)}
 \end{itemize}
 
-% \datedsubsection{Higher Secondary Certificate (H.S.C), Science}{Mar 2018 -- Feb 2020}
-% \textit{Police Lines School \& College}, Rangpur, Bangladesh
-
-% \datedsubsection{Secondary School Certificate (S.S.C), Science}{Jan 2016 -- Jan 2018}
-% \textit{Police Lines School \& College}, Rangpur, Bangladesh
-
-
 % --- Certifications ---
 \section{Certifications \& Achievements}
 \begin{itemize}
@@ -221,18 +204,6 @@
     \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} (Mar 2023)}
     \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} (Oct 2022)}
 \end{itemize}
-
-% --- Languages ---
-% \section{Languages}
-% \begin{itemize}
-%     \resitem{Bangla (Native)}
-%     \resitem{English (Full Professional Proficiency)}
-%     \resitem{Japanese (A1 level)}
-% \end{itemize}
-
-% --- Interests ---
-% \section{Interests}
-% 3D Design, Artificial Intelligence, Machine Learning, Full-Stack Development (Node.js, Python), Competitive Programming, Cloud Technologies, Open Source Contribution
 
 % DOCUMENT END ===============================================
 \end{document}

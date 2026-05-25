@@ -21,7 +21,8 @@ jobs:
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: Mehedi_CV.tex
+          root_file: "*.tex"
+          glob_root_file: true
           latexmk_use_xelatex: true
           args: -interaction=nonstopmode -halt-on-error  # no -pdf flag: xelatex handles output format itself
 
