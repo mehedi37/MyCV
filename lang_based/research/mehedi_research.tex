@@ -1,0 +1,183 @@
+\documentclass[10pt, a4paper]{article}
+
+% PACKAGES ===================================================
+\usepackage[a4paper, margin=0.6in]{geometry} % Margins slightly reduced to fit content comfortably
+\usepackage{amsmath}                          % Math symbols
+\usepackage{amsfonts}                         % Math fonts
+\usepackage{amssymb}                          % Math symbols
+\usepackage{graphicx}                         % Include graphics
+\usepackage[utf8]{inputenc}                   % Input encoding
+\usepackage[T1]{fontenc}                      % Font encoding
+\usepackage{lmodern}                          % Use Latin Modern font (good default)
+\usepackage{hyperref}                         % Clickable links
+\usepackage{xcolor}                           % Color support
+\usepackage{titlesec}                         % Section formatting
+\usepackage{enumitem}                         % Custom lists
+\usepackage{fontawesome5}                     % Icons
+
+% COLOR DEFINITIONS ==========================================
+\definecolor{primary}{HTML}{2b2b2b}  % Dark grey for text
+\definecolor{secondary}{HTML}{0e76a8} % LinkedIn blue for accent
+\definecolor{sectionrule}{HTML}{DDDDDD} % Light grey for rules
+
+% HYPERLINK SETUP =============================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={MD. Mehedi Hasan Maruf - Resume},
+    pdfauthor={MD. Mehedi Hasan Maruf},
+    pdfsubject={Software Engineer Resume},
+    pdfkeywords={Software Engineer, Full-Stack, Python, Node.js, React, AI, DeepMind}
+}
+
+% PAGE STYLE ==================================================
+\pagestyle{empty} % No page numbers
+\setlength{\parindent}{0pt} % No paragraph indentation
+\setlength{\parskip}{0.3em} % Reduced space between paragraphs
+
+% SECTION FORMATTING ==========================================
+\titleformat{\section}
+  {\Large\bfseries\color{secondary}} 
+  {} 
+  {0em} 
+  {} 
+  [\titlerule] 
+\titlespacing*{\section}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{primary}} 
+  {} 
+  {0em} 
+  {} 
+\titlespacing*{\subsection}{0pt}{0.8ex plus .5ex minus .2ex}{0.3ex plus .2ex}
+
+% CUSTOM COMMANDS ============================================
+\newcommand{\datedsubsection}[2]{%
+  \subsection*{#1 \hfill \small\textit{#2}}%
+}
+\newcommand{\resitem}[1]{\item #1} 
+
+% Make lists tighter
+\setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+\setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+
+% HEADER FUNCTION ============================================
+\newcommand{\header}[9]{ 
+  \begin{center}
+    {\Huge\bfseries\color{primary} #1}\\[0.2em] 
+    {\Large\color{secondary} #2}\\[0.5em] 
+    \small 
+    \faPhone* \href{tel:#3}{#3} \quad | \quad
+    \faWhatsapp \href{https://wa.me/#4}{#4} \quad | \quad
+    \faEnvelope \href{mailto:#5}{\hspace{0.5mm}#5} \quad | \quad
+    \faMapMarker {\hspace{1mm}#6 (#7)} \\ 
+    \faLinkedin \href{#8}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
+    \faGithub \href{#9}{\hspace{0.5mm}mehedi37}
+  \end{center}
+  % \vspace{0.5em}
+}
+
+% DOCUMENT START =============================================
+\begin{document}
+\color{primary} 
+
+% --- Header ---
+\header{MD. Mehedi Hasan Maruf} 
+       {Software Engineer} 
+       {+8801747090362} 
+       {+8801533300089} 
+       {mjmehedihasanoo7@gmail.com} 
+       {Rajshahi} 
+       {Bangladesh} 
+       {https://www.linkedin.com/in/mehedi-hasanmaruf} 
+       {https://github.com/mehedi37}
+
+% --- Summary ---
+\section{Summary}
+Computer Science engineer (RUET) researching NLP-driven curriculum optimization, combining semantic analysis, clustering (K-Means, TF-IDF), and knowledge-graph modeling to surface structural bottlenecks in academic data. Complements this research with almost 4 years of industry experience building production AI systems, including a LangChain-based generative AI agent platform and RAG pipelines, alongside full-stack TypeScript/Python backend development at Aamira Software Solutions. Brings strong algorithmic fundamentals and hands-on DevOps experience (Docker, CI/CD) to research and applied engineering alike.
+
+% --- Skills ---
+\section{Skills}
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
+    \item[Programming Languages:] TypeScript, Python, JavaScript
+    \item[Web Technologies:] Angular, React.js, Next.js, Node.js, FastAPI, Django
+    \item[Databases:] MySQL, PostgreSQL, MongoDB, Supabase
+    \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Project Management, Problem Solving
+    \item[AI/ML:] LangChain, Semantic Analysis, NLP, RAG, RLHF Concepts
+\end{description}
+
+% --- Experience ---
+\section{Experience}
+
+\datedsubsection{Full Stack Developer}{Jan 2025 -- Present}
+\textit{Aamira Software Solutions} \href{https://aamira.ca/}{\small\faExternalLink*}, Kokomo, Indiana, USA
+\begin{itemize}
+    \resitem{Spearheaded the frontend development of a high-traffic CRM system using \textbf{Angular} and \textbf{TypeScript}, directly contributing to increased client engagement.}
+    \resitem{Architected and implemented a Typescript microservice backend solution that reduced API response time.}
+    \resitem{Optimized database queries using Supabase, resulting in 60\% improvement in application performance.}
+\end{itemize}
+
+% \datedsubsection{AI Code Reviewer}{Oct 2024 -- Jan 2026}
+% \textit{Outlier} \href{https://www.linkedin.com/company/try-outlier/}{\small\faExternalLink*}
+% \begin{itemize}
+%     \resitem{Ensured rigorous code quality for \textbf{RLHF pipelines}, evaluating complex code snippets to improve the reasoning capabilities of large language models (LLMs) serving 50,000+ users.}
+%     \resitem{Collaborated with senior engineering leads to establish evaluation benchmarks and best practices for AI model integration.}
+% \end{itemize}
+
+\datedsubsection{Industrial Trainee}{Feb 2025 -- Mar 2025}
+\textit{Brain Station 23} \href{https://brainstation-23.com/}{\small\faExternalLink*}, Dhaka, Bangladesh
+\begin{itemize}
+    \resitem{Gained practical experience in enterprise software development methodology and practices.}
+    \resitem{Served as Team Representative for a 15-person cohort, coordinating communication between management and trainees.}
+    \resitem{Contributed to a student AI system using Next.js and Node.js that was deployed to an online server.}
+\end{itemize}
+
+\datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
+\textit{Code Studio} \href{https://www.linkedin.com/company/code-studio4/}{\small\faExternalLink*}, Rajshahi, Bangladesh
+\begin{itemize}
+    \resitem{Developed backends supporting thousands of daily users using JavaScript, TypeScript, and Python (Django).}
+    \resitem{Managed 12 VPS (Linux) with 99.8\% uptime and optimized CI/CD pipelines, reducing deployment time by 40\%.}
+    \resitem{Implemented Docker containerization, simplifying deployment across 5 different client environments.}
+\end{itemize}
+
+% --- Projects ---
+\section{Personal Projects}
+
+\datedsubsection{Generative AI Agent Platform}{Feb 2025 -- Mar 2025}
+\textit{Repository:} \href{https://github.com/mehedi37/student_AI}{student\_AI} | \textit{Live:} \href{https://student-ai-next.vercel.app/}{student-ai-next.vercel.app}
+\begin{itemize}
+    \resitem{Engineered a \textbf{Generative AI Agent} using LangChain and LLMs to autonomously create educational content, mirroring the \textbf{agent authoring workflows} found in modern AI studios.}
+    \resitem{Implemented intelligent quiz generation, document Q\&A, and YouTube content analysis using semantic search with conversation memory.}
+    \resitem{Built a comprehensive document processing pipeline supporting PDFs, images, and videos with real-time WebSocket chat, JWT authentication, and progress tracking.}
+    \resitem{Deployed production-ready application on Vercel (frontend) and Render (backend) with Supabase database integration.}
+\end{itemize}
+
+\datedsubsection{TRACE Framework - AI-Driven Curriculum Optimization (Thesis)}{Dec 2025 -- Present}
+% \textit{Repository:} \href{https://github.com/mehedi37/Thesis_Site}{github.com/mehedi37/Thesis\_Site}
+\begin{itemize}
+    \resitem{\textbf{Architected} a novel NLP pipeline to deconstruct university course syllabi, utilizing advanced semantic analysis to identify structural bottlenecks and curriculum redundancies.}
+    \resitem{\textbf{Engineered} a specialized algorithm combining \textbf{K-Means clustering} and \textbf{TF-IDF} to quantify topic relevance, enabling data-driven decisions for academic syllabus restructuring.}
+    \resitem{\textbf{Designed} a scalable system architecture capable of parsing unstructured academic data into a structured knowledge graph, laying the groundwork for automated educational standard auditing.}
+\end{itemize}
+
+% --- Education ---
+\section{Education}
+
+\datedsubsection{B.Sc. Engineering, Computer Science and Engineering}{Mar 2022 -- Aug 2026}
+\textit{Rajshahi University of Engineering \& Technology (RUET)}, Rajshahi, Bangladesh
+\begin{itemize}
+    \resitem{CGPA: 3.77 (till 7th semester)}
+\end{itemize}
+
+% --- Certifications ---
+\section{Certifications \& Achievements}
+\begin{itemize}
+    \resitem{Digital Accessibility Training (DAT) - a2i (Aspire to Innovate), Govt. of Bangladesh \href{https://drive.google.com/file/d/1r0YTwNWt2G--afHjJkN7hf9taI2d445W/view?usp=sharing}{\faExternalLink*} (Oct 2025)}
+    \resitem{Industrial Training Certificate - Brain Station 23 \href{https://drive.google.com/file/d/1_Smp7BMAuuKgN4McPJv-UFcsK27mXtBj/view?usp=sharing}{\faExternalLink*} (Mar 2025)}
+    \resitem{PHP (Laravel) - EDGE Project \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{\faExternalLink*} (Feb 2025)}
+    \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} (Mar 2023)}
+    \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} (Oct 2022)}
+\end{itemize}
+
+\end{document}
