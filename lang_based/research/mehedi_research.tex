@@ -1,7 +1,7 @@
 \documentclass[10pt, a4paper]{article}
 
 % PACKAGES ===================================================
-\usepackage[a4paper, margin=0.6in]{geometry} % Margins slightly reduced to fit content comfortably
+\usepackage[a4paper, margin=0.5in]{geometry} % Margins slightly reduced to fit content comfortably
 \usepackage{amsmath}                          % Math symbols
 \usepackage{amsfonts}                         % Math fonts
 \usepackage{amssymb}                          % Math symbols
@@ -34,68 +34,69 @@
 % PAGE STYLE ==================================================
 \pagestyle{empty} % No page numbers
 \setlength{\parindent}{0pt} % No paragraph indentation
-\setlength{\parskip}{0.3em} % Reduced space between paragraphs
+\setlength{\parskip}{0.25em} % Reduced space between paragraphs
 
 % SECTION FORMATTING ==========================================
 \titleformat{\section}
-  {\Large\bfseries\color{secondary}} 
-  {} 
-  {0em} 
-  {} 
-  [\titlerule] 
+  {\Large\bfseries\color{secondary}}
+  {}
+  {0em}
+  {}
+  [\titlerule]
 \titlespacing*{\section}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
 
 \titleformat{\subsection}
-  {\large\bfseries\color{primary}} 
-  {} 
-  {0em} 
-  {} 
+  {\large\bfseries\color{primary}}
+  {}
+  {0em}
+  {}
 \titlespacing*{\subsection}{0pt}{0.8ex plus .5ex minus .2ex}{0.3ex plus .2ex}
 
 % CUSTOM COMMANDS ============================================
 \newcommand{\datedsubsection}[2]{%
   \subsection*{#1 \hfill \small\textit{#2}}%
 }
-\newcommand{\resitem}[1]{\item #1} 
+\newcommand{\resitem}[1]{\item #1}
 
 % Make lists tighter
 \setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
 \setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
 
 % HEADER FUNCTION ============================================
-\newcommand{\header}[9]{ 
+\newcommand{\header}[9]{
   \begin{center}
-    {\Huge\bfseries\color{primary} #1}\\[0.2em] 
-    {\Large\color{secondary} #2}\\[0.5em] 
-    \small 
+    {\Huge\bfseries\color{primary} #1}\\[0.2em]
+    {\Large\color{secondary} #2}\\[0.5em]
+    \small
     \faPhone* \href{tel:#3}{#3} \quad | \quad
     \faWhatsapp \href{https://wa.me/#4}{#4} \quad | \quad
     \faEnvelope \href{mailto:#5}{\hspace{0.5mm}#5} \quad | \quad
-    \faMapMarker {\hspace{1mm}#6 (#7)} \\ 
+    \faMapMarker {\hspace{1mm}#6 (#7)} \\
     \faLinkedin \href{#8}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
     \faGithub \href{#9}{\hspace{0.5mm}mehedi37}
+    \quad | \quad \faGlobe \href{https://www.mehedi-hasan-maruf.me/}{\hspace{0.5mm}mehedi-hasan-maruf.me}
   \end{center}
   % \vspace{0.5em}
 }
 
 % DOCUMENT START =============================================
 \begin{document}
-\color{primary} 
+\color{primary}
 
 % --- Header ---
-\header{MD. Mehedi Hasan Maruf} 
-       {Software Engineer} 
-       {+8801747090362} 
-       {+8801533300089} 
-       {mjmehedihasanoo7@gmail.com} 
-       {Rajshahi} 
-       {Bangladesh} 
-       {https://www.linkedin.com/in/mehedi-hasanmaruf} 
+\header{MD. Mehedi Hasan Maruf}
+       {Software Engineer}
+       {+8801747090362}
+       {+8801533300089}
+       {mjmehedihasanoo7@gmail.com}
+       {Dhaka}
+       {Bangladesh}
+       {https://www.linkedin.com/in/mehedi-hasanmaruf}
        {https://github.com/mehedi37}
 
 % --- Summary ---
 \section{Summary}
-Computer Science engineer (RUET) researching NLP-driven curriculum optimization, combining semantic analysis, clustering (K-Means, TF-IDF), and knowledge-graph modeling to surface structural bottlenecks in academic data. Complements this research with almost 4 years of industry experience building production AI systems, including a LangChain-based generative AI agent platform and RAG pipelines, alongside full-stack TypeScript/Python backend development at Aamira Software Solutions. Brings strong algorithmic fundamentals and hands-on DevOps experience (Docker, CI/CD) to research and applied engineering alike.
+Computer Science engineer (RUET) with a B.Sc. thesis on multi-modal curriculum bottleneck detection, fusing prerequisite-graph centrality, Bayesian fail-rate modeling, and aspect-based sentiment analysis into a single bottleneck score validated causally (DoWhy) on 23,000+ real student records. Also has almost 4 years of industry experience building production AI systems, including a LangChain-based generative AI agent platform and RAG pipelines, plus full-stack TypeScript/Python backend development and DevOps work (Docker, CI/CD) at Aamira Software Solutions.
 
 % --- Skills ---
 \section{Skills}
@@ -104,7 +105,7 @@ Computer Science engineer (RUET) researching NLP-driven curriculum optimization,
     \item[Web Technologies:] Angular, React.js, Next.js, Node.js, FastAPI, Django
     \item[Databases:] MySQL, PostgreSQL, MongoDB, Supabase
     \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Project Management, Problem Solving
-    \item[AI/ML:] LangChain, Semantic Analysis, NLP, RAG, RLHF Concepts
+    \item[AI/ML:] LangChain, Semantic Analysis, NLP, RAG, Causal Inference (DoWhy), Bayesian Modeling, Graph Neural Networks (PyTorch)
 \end{description}
 
 % --- Experience ---
@@ -113,8 +114,8 @@ Computer Science engineer (RUET) researching NLP-driven curriculum optimization,
 \datedsubsection{Full Stack Developer}{Jan 2025 -- Present}
 \textit{Aamira Software Solutions} \href{https://aamira.ca/}{\small\faExternalLink*}, Kokomo, Indiana, USA
 \begin{itemize}
-    \resitem{Spearheaded the frontend development of a high-traffic CRM system using \textbf{Angular} and \textbf{TypeScript}, directly contributing to increased client engagement.}
-    \resitem{Architected and implemented a Typescript microservice backend solution that reduced API response time.}
+    \resitem{Led development of a customer relationship management system that increased client response rates by 30\%.}
+    \resitem{Architected and implemented a Typescript microservice backend solution that reduced API response time by 40\%.}
     \resitem{Optimized database queries using Supabase, resulting in 60\% improvement in application performance.}
 \end{itemize}
 
@@ -143,22 +144,35 @@ Computer Science engineer (RUET) researching NLP-driven curriculum optimization,
 
 % --- Projects ---
 \section{Personal Projects}
-
-\datedsubsection{Generative AI Agent Platform}{Feb 2025 -- Mar 2025}
-\textit{Repository:} \href{https://github.com/mehedi37/student_AI}{student\_AI} | \textit{Live:} \href{https://student-ai-next.vercel.app/}{student-ai-next.vercel.app}
+\datedsubsection{StudentAI - Intelligent Learning Companion}{Feb 2025 -- Mar 2025}
+\textit{Read More:} \href{https://www.mehedi-hasan-maruf.me/projects/student-ai}{\faExternalLink*}
 \begin{itemize}
-    \resitem{Engineered a \textbf{Generative AI Agent} using LangChain and LLMs to autonomously create educational content, mirroring the \textbf{agent authoring workflows} found in modern AI studios.}
-    \resitem{Implemented intelligent quiz generation, document Q\&A, and YouTube content analysis using semantic search with conversation memory.}
-    \resitem{Built a comprehensive document processing pipeline supporting PDFs, images, and videos with real-time WebSocket chat, JWT authentication, and progress tracking.}
+    \resitem{Developed during industrial attachment at Brain Station 23: AI-powered learning assistant combining \textbf{FastAPI backend} with \textbf{Next.js frontend} for personalized education.}
+    \resitem{Implemented a \textbf{RAG pipeline} with LangChain for document Q\&A, semantic retrieval, and conversation memory; extended to YouTube content analysis and intelligent quiz generation.}
+    \resitem{Built a \textbf{multimodal} document processing pipeline supporting PDFs, images, and videos with real-time WebSocket chat, JWT authentication, and progress tracking.}
     \resitem{Deployed production-ready application on Vercel (frontend) and Render (backend) with Supabase database integration.}
 \end{itemize}
 
-\datedsubsection{TRACE Framework - AI-Driven Curriculum Optimization (Thesis)}{Dec 2025 -- Present}
+\datedsubsection{Omnious -- Visual Debugging Platform}{Nov 2025 -- Present}
+\textit{Read More:} \href{https://www.mehedi-hasan-maruf.me/projects/omnious}{\faExternalLink*}
+\begin{itemize}
+    \resitem{Building a full-stack visual debugging platform with interactive code-graph visualization, real-time trace animation, error heatmaps, and \textbf{AI-powered} chat-based debugging.}
+    \resitem{Engineered a scalable \textbf{Node.js} backend using \textbf{Fastify 5} and \textbf{tRPC v11} with \textbf{TypeScript}, integrated with a \textbf{Next.js 16}/\textbf{React 19} frontend in a \textbf{Turborepo} monorepo.}
+    \resitem{Integrated \textbf{PostgreSQL 15} with \textbf{pgvector}, \textbf{ltree}, and \textbf{pg\_trgm} via \textbf{Supabase} for semantic search and hierarchical data; implemented Row-Level Security (RLS).}
+    \resitem{Containerized the full-stack application using \textbf{Docker Compose} with multi-stage builds; automated deployment via \textbf{GitHub Actions} CI/CD pipeline.}
+\end{itemize}
+
+% --- Research ---
+\section{Research}
+
+\datedsubsection{TRACE: A Multi-Modal Framework for Curriculum Bottleneck Detection and Causal Validation}{Jul 2025 -- Aug 2026}
+\textit{B.Sc. Thesis, Dept. of CSE, RUET} | \textit{Supervisor:} Farjana Parvin, Assistant Professor
 % \textit{Repository:} \href{https://github.com/mehedi37/Thesis_Site}{github.com/mehedi37/Thesis\_Site}
 \begin{itemize}
-    \resitem{\textbf{Architected} a novel NLP pipeline to deconstruct university course syllabi, utilizing advanced semantic analysis to identify structural bottlenecks and curriculum redundancies.}
-    \resitem{\textbf{Engineered} a specialized algorithm combining \textbf{K-Means clustering} and \textbf{TF-IDF} to quantify topic relevance, enabling data-driven decisions for academic syllabus restructuring.}
-    \resitem{\textbf{Designed} a scalable system architecture capable of parsing unstructured academic data into a structured knowledge graph, laying the groundwork for automated educational standard auditing.}
+    \resitem{\textbf{Architected} TRACE, a multi-modal graph-mining framework fusing prerequisite-graph centrality (NetworkX, GAT edge weighting), Bayesian fail-rate modeling, and aspect-based sentiment analysis (DeBERTa/VADER) into a single composite bottleneck score.}
+    \resitem{\textbf{Built} a reproducible synthetic-curriculum benchmark with planted, type-disjoint bottlenecks; fusion reached an F-measure of 0.75 and NDCG@10 of 0.81, roughly double the best single-signal baseline.}
+    \resitem{\textbf{Causally validated} flagged bottlenecks on OULAD (23,369 students) via \textbf{DoWhy} backdoor-adjustment OLS; high assignment engagement raised held-out pass rates by 19.9 percentage points ($p<0.01$, E-value 1.89).}
+    \resitem{\textbf{Demonstrated} that the structure-only detector generalizes across RUET, MIT, and Stanford curricula (top-5 hub courses gate 44--55\% of the downstream curriculum) and validated rankings against a domain expert (8/10 agreement); surfaced RUET's high-failure MATH1213 (16.9\% fail rate) via the ``Preparation Paradox,'' where student effort masks true course difficulty.}
 \end{itemize}
 
 % --- Education ---
@@ -176,6 +190,7 @@ Computer Science engineer (RUET) researching NLP-driven curriculum optimization,
     \resitem{Digital Accessibility Training (DAT) - a2i (Aspire to Innovate), Govt. of Bangladesh \href{https://drive.google.com/file/d/1r0YTwNWt2G--afHjJkN7hf9taI2d445W/view?usp=sharing}{\faExternalLink*} (Oct 2025)}
     \resitem{Industrial Training Certificate - Brain Station 23 \href{https://drive.google.com/file/d/1_Smp7BMAuuKgN4McPJv-UFcsK27mXtBj/view?usp=sharing}{\faExternalLink*} (Mar 2025)}
     \resitem{PHP (Laravel) - EDGE Project \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{\faExternalLink*} (Feb 2025)}
+    \resitem{Experience Certificate - Code Studio \href{https://drive.google.com/file/d/195bms3HX2eF-QGjPypnlaZmQLn2nv7xT/view?usp=sharing}{\faExternalLink*} (Apr 2024)}
     \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} (Mar 2023)}
     \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} (Oct 2022)}
 \end{itemize}
