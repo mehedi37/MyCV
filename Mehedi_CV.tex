@@ -14,6 +14,8 @@
 \usepackage{titlesec}                         % Section formatting
 \usepackage{enumitem}                         % Custom lists
 \usepackage{fontawesome5}                     % Icons (optional, requires fontawesome5 package)
+\usepackage{array}                            % Extended column formatting for tables
+\usepackage{tabularx}                         % Flexible-width tables
 
 % COLOR DEFINITIONS (Optional - customize as needed) =================
 \definecolor{primary}{HTML}{2b2b2b}  % Dark grey for text
@@ -106,7 +108,7 @@
        {https://github.com/mehedi37} % GitHub URL
 % --- Summary ---
 \section{Summary}
-Computer Science engineer (RUET) with almost 4 years of industry experience spanning full-stack web development, backend architecture, and AI-powered systems. Currently engineering microservice backends and CRM platforms in production at Aamira Software Solutions; previously shipped Django/Node.js backends serving thousands of daily users and built RAG-based AI applications with LangChain. Also has hands-on DevOps experience with Docker, CI/CD, and Linux VPS management.
+Computer Science engineer (RUET) with almost 4 years of industry experience building full-stack TypeScript/JavaScript systems, from Node.js/NestJS microservices to React/Next.js frontends. Currently engineering a TypeScript microservice backend at Aamira Software Solutions and building Omnious, a full-stack visual debugging platform on Fastify, tRPC, and Next.js. Also has hands-on DevOps experience with Docker, CI/CD, and Linux VPS management.
 % --- Skills ---
 \section{Skills}
 \begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
@@ -116,8 +118,6 @@ Computer Science engineer (RUET) with almost 4 years of industry experience span
     \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Pydantic, Project Management, Problem Solving
     \item[AI/ML:] LangChain, Hugging Face Transformers, Semantic Analysis, NLP
 \end{description}
-
-
 % --- Experience ---
 \section{Experience}
 \datedsubsection{Software Engineer II}{Jan 2025 -- Present}
@@ -147,14 +147,12 @@ Computer Science engineer (RUET) with almost 4 years of industry experience span
     \resitem{Managed 12 VPS (Linux) with 99.8\% uptime and optimized CI/CD pipelines, reducing deployment time by 40\%.}
     \resitem{Implemented Docker containerization, simplifying deployment across 5 different client environments.}
 \end{itemize}
-\datedsubsection{Competitive Programming Mentor}{Aug 2023 -- Nov 2023}
-\textit{RAPL (University Organization)}
-\begin{itemize}
-    \resitem{Instructed RUET students in competitive programming concepts.}
-    \resitem{Developed curriculum covering number theory and graph traversal algorithms; organized biweekly coding competitions.}
-\end{itemize}
-
-\newpage
+% \datedsubsection{Competitive Programming Mentor}{Aug 2023 -- Nov 2023}
+% \textit{RAPL (University Organization)}
+% \begin{itemize}
+%     \resitem{Instructed RUET students in competitive programming concepts.}
+%     \resitem{Developed curriculum covering number theory and graph traversal algorithms; organized biweekly coding competitions.}
+% \end{itemize}
 % --- Projects ---
 \section{Personal Projects}
 \datedsubsection{StudentAI - Intelligent Learning Companion}{Feb 2025 -- Mar 2025}
@@ -206,6 +204,15 @@ Computer Science engineer (RUET) with almost 4 years of industry experience span
     \resitem{4th Place - RUET CodeSmash (Team Competition) - Competitive Programming Contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} (Mar 2023)}
     \resitem{4th Place - RUET CodeSpark (Individual) - Competitive Programming Contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} (Oct 2022)}
 \end{itemize}
+
+\section{References}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{@{}X X X@{}}
+\textbf{Dr. Md. Shahid Uz Zaman} & \textbf{Dr. Md. Nour Hossain} & \textbf{Sadia Afrin Badhan} \\
+Professor, Dept. of CSE, RUET & Assistant Professor, University at Albany, New York, USA & Engineering Operations Manager, Optimizely \\
+\faEnvelope\ \href{mailto:zaman@cse.ruet.ac.bd}{zaman@cse.ruet.ac.bd} & \faEnvelope\ \href{mailto:mhossain6@albany.edu}{mhossain6@albany.edu} & --- \\
+\href{https://www.ruet.ac.bd/szaman22ruet}{\small\faExternalLink*\ Profile} & \href{https://www.linkedin.com/in/md-nour-hossain-a554bb6/}{\small\faExternalLink*\ Profile} & \href{https://www.linkedin.com/in/safrin33/}{\small\faExternalLink*\ Profile} \\
+\end{tabularx}
 
 % DOCUMENT END ===============================================
 \end{document}

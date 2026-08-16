@@ -1,7 +1,7 @@
 \documentclass[10pt, a4paper]{article}
 
 % PACKAGES ===================================================
-\usepackage[a4paper, margin=0.5in]{geometry} % Margins slightly reduced to fit content comfortably
+\usepackage[a4paper, margin=0.75in]{geometry} % Page margins
 \usepackage{amsmath}                          % Math symbols
 \usepackage{amsfonts}                         % Math fonts
 \usepackage{amssymb}                          % Math symbols
@@ -13,13 +13,13 @@
 \usepackage{xcolor}                           % Color support
 \usepackage{titlesec}                         % Section formatting
 \usepackage{enumitem}                         % Custom lists
-\usepackage{fontawesome5}                     % Icons
+\usepackage{fontawesome5}                     % Icons (optional, requires fontawesome5 package)
 \usepackage{array}                            % Extended column formatting for tables
 \usepackage{tabularx}                         % Flexible-width tables
 
-% COLOR DEFINITIONS ==========================================
+% COLOR DEFINITIONS (Optional - customize as needed) =================
 \definecolor{primary}{HTML}{2b2b2b}  % Dark grey for text
-\definecolor{secondary}{HTML}{0e76a8} % LinkedIn blue for accent
+\definecolor{secondary}{HTML}{0e76a8} % Professional LinkedIn blue for better visibility
 \definecolor{sectionrule}{HTML}{DDDDDD} % Light grey for rules
 
 % HYPERLINK SETUP =============================================
@@ -30,52 +30,64 @@
     pdftitle={MD. Mehedi Hasan Maruf - Resume},
     pdfauthor={MD. Mehedi Hasan Maruf},
     pdfsubject={Software Engineer Resume},
-    pdfkeywords={Software Engineer, Full-Stack, Python, Node.js, React, AI, DeepMind}
+    pdfkeywords={Software Engineer, Full-Stack, Node.js, NestJS, TypeScript, React, AI}
 }
+
+% FONT SETUP (Latin Modern is default, alternatives below) ======
+% \usepackage{lato} % Example: Use Lato font
+% \renewcommand*\familydefault{\sfdefault} % Make sans-serif the default if using Lato/similar
 
 % PAGE STYLE ==================================================
 \pagestyle{empty} % No page numbers
 \setlength{\parindent}{0pt} % No paragraph indentation
-\setlength{\parskip}{0.25em} % Reduced space between paragraphs
+\setlength{\parskip}{0.3em} % Reduced space between paragraphs
 
 % SECTION FORMATTING ==========================================
 \titleformat{\section}
-  {\Large\bfseries\color{secondary}}
-  {}
-  {0em}
-  {}
-  [\titlerule]
+  {\Large\bfseries\color{secondary}} % Format: Large, bold, accent color
+  {} % Label
+  {0em} % Separation between label and title
+  {} % Code before title
+  [\titlerule] % Code after title (horizontal rule)
 \titlespacing*{\section}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
 
 \titleformat{\subsection}
-  {\large\bfseries\color{primary}}
-  {}
-  {0em}
-  {}
+  {\large\bfseries\color{primary}} % Format: large, bold, primary color
+  {} % Label
+  {0em} % Separation
+  {} % Code before
 \titlespacing*{\subsection}{0pt}{0.8ex plus .5ex minus .2ex}{0.3ex plus .2ex}
 
-% CUSTOM COMMANDS ============================================
+% COMPANY URLs (Update links here) ===========================
+\newcommand{\urlAamira}{https://aamira.ca/}
+\newcommand{\urlOutlier}{https://www.linkedin.com/company/try-outlier/}
+\newcommand{\urlBrainStation}{https://brainstation-23.com/}
+\newcommand{\urlCodeStudio}{https://www.linkedin.com/company/code-studio4/}
+
+% CUSTOM COMMANDS (Optional) =================================
 \newcommand{\datedsubsection}[2]{%
-  \subsection*{#1 \hfill \small\textit{#2}}%
+  \subsection*{#1 \hfill \small\textit{#2}}% Hides subsection number, adds date to the right
 }
-\newcommand{\resitem}[1]{\item #1}
+
+\newcommand{\resitem}[1]{\item #1} % Simple list item
 
 % Make lists tighter
 \setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
 \setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
 
-% HEADER FUNCTION ============================================
-\newcommand{\header}[9]{
+% HEADER ======================================================
+\newcommand{\header}[9]{ % Added argument for WhatsApp
   \begin{center}
-    {\Huge\bfseries\color{primary} #1}\\[0.2em]
-    {\Large\color{secondary} #2}\\[0.5em]
-    \small
+    {\Huge\bfseries\color{primary} #1}\\[0.2em] % Name
+    {\Large\color{secondary} #2}\\[0.5em] % Title
+    \small % Contact info
     \faPhone* \href{tel:#3}{#3} \quad | \quad
     \faWhatsapp \href{https://wa.me/#4}{#4} \quad | \quad
     \faEnvelope \href{mailto:#5}{\hspace{0.5mm}#5} \quad | \quad
-    \faMapMarker {\hspace{1mm}#6 (#7)} \\
+    \faMapMarker {\hspace{1mm}#6 (#7)} \\ % Line break for better spacing if needed
     \faLinkedin \href{#8}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
     \faGithub \href{#9}{\hspace{0.5mm}mehedi37}
+    % --- Uncomment and add your website below ---
     \quad | \quad \faGlobe \href{https://www.mehedi-hasan-maruf.me/}{\hspace{0.5mm}mehedi-hasan-maruf.me}
   \end{center}
   % \vspace{0.5em}
@@ -83,67 +95,64 @@
 
 % DOCUMENT START =============================================
 \begin{document}
-\color{primary}
-
+\color{primary} % Default text color
 % --- Header ---
-\header{MD. Mehedi Hasan Maruf}
-       {Software Engineer}
-       {+8801747090362}
-       {+8801533300089}
-       {mjmehedihasanoo7@gmail.com}
-       {Dhaka}
-       {Bangladesh}
-       {https://www.linkedin.com/in/mehedi-hasanmaruf}
-       {https://github.com/mehedi37}
-
+\header{MD. Mehedi Hasan Maruf} % Name
+       {Software Engineer} % Title
+       {+8801747090362} % Phone
+       {+8801533300089} % WhatsApp
+       {mjmehedihasanoo7@gmail.com} % Email
+       {Dhaka} % City
+       {Bangladesh} % Country
+       {https://www.linkedin.com/in/mehedi-hasanmaruf} % LinkedIn URL
+       {https://github.com/mehedi37} % GitHub URL
 % --- Summary ---
 \section{Summary}
-Computer Science engineer (RUET) with a B.Sc. thesis on multi-modal curriculum bottleneck detection, fusing prerequisite-graph centrality, Bayesian fail-rate modeling, and aspect-based sentiment analysis into a single bottleneck score validated causally (DoWhy) on 23,000+ real student records. Also has almost 4 years of industry experience building production AI systems, including a LangChain-based generative AI agent platform and RAG pipelines, plus full-stack TypeScript/Python backend development and DevOps work (Docker, CI/CD) at Aamira Software Solutions.
-
+Computer Science engineer (RUET) with almost 4 years of industry experience building full-stack TypeScript/JavaScript systems, from Node.js/NestJS microservices to React/Next.js frontends. Currently engineering a TypeScript microservice backend at Aamira Software Solutions and building Omnious, a full-stack visual debugging platform on Fastify, tRPC, and Next.js. Also has hands-on DevOps experience with Docker, CI/CD, and Linux VPS management.
 % --- Skills ---
 \section{Skills}
 \begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
-    \item[Programming Languages:] TypeScript, Python, JavaScript
-    \item[Web Technologies:] Angular, React.js, Next.js, Node.js, FastAPI, Django
+    \item[Programming Languages:] Python, JavaScript, TypeScript
+    \item[Web Technologies:] Node.js, NestJS, Express.js, React.js, Angular, Next.js, FastAPI, Django, .NET
     \item[Databases:] MySQL, PostgreSQL, MongoDB, Supabase
-    \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Project Management, Problem Solving
-    \item[AI/ML:] LangChain, Semantic Analysis, NLP, RAG, Causal Inference (DoWhy), Bayesian Modeling, Graph Neural Networks (PyTorch)
+    \item[Tools \& Concepts:] Git, Docker, CI/CD (GitHub Actions, Netlify), VPS (Linux) Management, REST APIs, ORM (Django ORM, Supabase), Pydantic, Project Management, Problem Solving
+    \item[AI/ML:] LangChain, Hugging Face Transformers, Semantic Analysis, NLP
 \end{description}
-
 % --- Experience ---
 \section{Experience}
-
 \datedsubsection{Software Engineer II}{Jan 2025 -- Present}
-\textit{Aamira Software Solutions} \href{https://aamira.ca/}{\small\faExternalLink*}, Kokomo, Indiana, USA
+\textit{Aamira Software Solutions} \href{\urlAamira}{\small\faExternalLink*}, Kokomo, Indiana, USA
 \begin{itemize}
     \resitem{Led development of a customer relationship management system that increased client response rates by 30\%.}
     \resitem{Architected and implemented a Typescript microservice backend solution that reduced API response time by 40\%.}
     \resitem{Optimized database queries using Supabase, resulting in 60\% improvement in application performance.}
 \end{itemize}
-
 % \datedsubsection{AI Code Reviewer}{Oct 2024 -- Jan 2026}
-% \textit{Outlier} \href{https://www.linkedin.com/company/try-outlier/}{\small\faExternalLink*}
+% \textit{Outlier} \href{\urlOutlier}{\small\faExternalLink*}
 % \begin{itemize}
-%     \resitem{Ensured rigorous code quality for \textbf{RLHF pipelines}, evaluating complex code snippets to improve the reasoning capabilities of large language models (LLMs) serving 50,000+ users.}
-%     \resitem{Collaborated with senior engineering leads to establish evaluation benchmarks and best practices for AI model integration.}
+%     \resitem{Reviewed and improved code quality for AI systems serving 50,000+ daily users.}
+%     \resitem{Collaborated with senior developers to establish best practices for AI model integration.}
 % \end{itemize}
-
 \datedsubsection{Industrial Trainee}{Feb 2025 -- Mar 2025}
-\textit{Brain Station 23} \href{https://brainstation-23.com/}{\small\faExternalLink*}, Dhaka, Bangladesh
+\textit{Brain Station 23} \href{\urlBrainStation}{\small\faExternalLink*}, Dhaka, Bangladesh
 \begin{itemize}
     \resitem{Gained practical experience in enterprise software development methodology and practices.}
     \resitem{Served as Team Representative for a 15-person cohort, coordinating communication between management and trainees.}
     \resitem{Contributed to a student AI system using Next.js and Node.js that was deployed to an online server.}
 \end{itemize}
-
 \datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
-\textit{Code Studio} \href{https://www.linkedin.com/company/code-studio4/}{\small\faExternalLink*}, Rajshahi, Bangladesh
+\textit{Code Studio} \href{\urlCodeStudio}{\small\faExternalLink*}, Rajshahi, Bangladesh
 \begin{itemize}
     \resitem{Developed backends supporting thousands of daily users using JavaScript, TypeScript, and Python (Django).}
     \resitem{Managed 12 VPS (Linux) with 99.8\% uptime and optimized CI/CD pipelines, reducing deployment time by 40\%.}
     \resitem{Implemented Docker containerization, simplifying deployment across 5 different client environments.}
 \end{itemize}
-
+\datedsubsection{Competitive Programming Mentor}{Aug 2023 -- Nov 2023}
+\textit{RAPL (University Organization)}
+\begin{itemize}
+    \resitem{Instructed RUET students in competitive programming concepts.}
+    \resitem{Developed curriculum covering number theory and graph traversal algorithms; organized biweekly coding competitions.}
+\end{itemize}
 % --- Projects ---
 \section{Personal Projects}
 \datedsubsection{StudentAI - Intelligent Learning Companion}{Feb 2025 -- Mar 2025}
@@ -165,17 +174,16 @@ Computer Science engineer (RUET) with a B.Sc. thesis on multi-modal curriculum b
 \end{itemize}
 
 % --- Research ---
-\section{Research}
+% \section{Research}
 
-\datedsubsection{TRACE: A Multi-Modal Framework for Curriculum Bottleneck Detection and Causal Validation}{Jul 2025 -- Aug 2026}
-\textit{B.Sc. Thesis, Dept. of CSE, RUET} | \textit{Supervisor:} Farjana Parvin, Assistant Professor
-% \textit{Repository:} \href{https://github.com/mehedi37/Thesis_Site}{github.com/mehedi37/Thesis\_Site}
-\begin{itemize}
-    \resitem{\textbf{Architected} TRACE, a multi-modal graph-mining framework fusing prerequisite-graph centrality (NetworkX, GAT edge weighting), Bayesian fail-rate modeling, and aspect-based sentiment analysis (DeBERTa/VADER) into a single composite bottleneck score.}
-    \resitem{\textbf{Built} a reproducible synthetic-curriculum benchmark with planted, type-disjoint bottlenecks; fusion reached an F-measure of 0.75 and NDCG@10 of 0.81, roughly double the best single-signal baseline.}
-    \resitem{\textbf{Causally validated} flagged bottlenecks on OULAD (23,369 students) via \textbf{DoWhy} backdoor-adjustment OLS; high assignment engagement raised held-out pass rates by 19.9 percentage points ($p<0.01$, E-value 1.89).}
-    \resitem{\textbf{Demonstrated} that the structure-only detector generalizes across RUET, MIT, and Stanford curricula (top-5 hub courses gate 44--55\% of the downstream curriculum) and validated rankings against a domain expert (8/10 agreement); surfaced RUET's high-failure MATH1213 (16.9\% fail rate) via the ``Preparation Paradox,'' where student effort masks true course difficulty.}
-\end{itemize}
+% \datedsubsection{TRACE: A Multi-Modal Framework for Curriculum Bottleneck Detection and Causal Validation}{Jul 2025 -- Aug 2026}
+% \textit{B.Sc. Thesis, Dept. of CSE, RUET} | \textit{Supervisor:} Farjana Parvin, Assistant Professor
+% \begin{itemize}
+%     \resitem{Architected TRACE, a multi-modal graph-mining framework fusing prerequisite-graph centrality (NetworkX, GAT edge weighting), Bayesian Beta-Binomial fail-rate modeling, and aspect-based sentiment analysis (DeBERTa/VADER) into a single composite bottleneck score.}
+%     \resitem{Built a reproducible synthetic-curriculum benchmark with planted, type-disjoint bottlenecks; fusion reached an F-measure of 0.75 and NDCG@10 of 0.81, roughly double the best single-signal baseline (0.375 / 0.54).}
+%     \resitem{Causally validated flagged bottlenecks on OULAD (23,369 students) via \textbf{DoWhy} backdoor-adjustment OLS with bootstrap confidence intervals and E-value sensitivity analysis; high assignment engagement raised held-out pass rates by 19.9 percentage points ($p<0.01$, E-value 1.89).}
+%     \resitem{Demonstrated that the structure-only detector generalizes across RUET, MIT, and Stanford curricula (top-5 hub courses gate 44--55\% of the downstream curriculum) and validated rankings against a domain expert (8/10 agreement).}
+% \end{itemize}
 
 % --- Education ---
 \section{Education}
@@ -199,11 +207,12 @@ Computer Science engineer (RUET) with a B.Sc. thesis on multi-modal curriculum b
 
 \section{References}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\textwidth}{@{}X X@{}}
-\textbf{Dr. Md. Shahid Uz Zaman} & \textbf{Dr. Md. Nour Hossain} \\
-Professor, Dept. of CSE, RUET & Assistant Professor, University at Albany, New York, USA \\
-\faEnvelope\ \href{mailto:zaman@cse.ruet.ac.bd}{zaman@cse.ruet.ac.bd} & \faEnvelope\ \href{mailto:mhossain6@albany.edu}{mhossain6@albany.edu} \\
-\href{https://www.ruet.ac.bd/szaman22ruet}{\small\faExternalLink*\ Profile} & \href{https://www.linkedin.com/in/md-nour-hossain-a554bb6/}{\small\faExternalLink*\ Profile} \\
+\begin{tabularx}{\textwidth}{@{}X X X@{}}
+\textbf{Dr. Md. Shahid Uz Zaman} & \textbf{Dr. Md. Nour Hossain} & \textbf{Sadia Afrin Badhan} \\
+Professor, Dept. of CSE, RUET & Assistant Professor, University at Albany, New York, USA & Engineering Operations Manager, Optimizely \\
+\faEnvelope\ \href{mailto:zaman@cse.ruet.ac.bd}{zaman@cse.ruet.ac.bd} & \faEnvelope\ \href{mailto:mhossain6@albany.edu}{mhossain6@albany.edu} & --- \\
+\href{https://www.ruet.ac.bd/szaman22ruet}{\small\faExternalLink*\ Profile} & \href{https://www.linkedin.com/in/md-nour-hossain-a554bb6/}{\small\faExternalLink*\ Profile} & \href{https://www.linkedin.com/in/safrin33/}{\small\faExternalLink*\ Profile} \\
 \end{tabularx}
 
+% DOCUMENT END ===============================================
 \end{document}
