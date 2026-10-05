@@ -35,7 +35,7 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
-
+temp/*
 ## Build tool directories for auxiliary files
 # latexrun
 latex.out/
@@ -272,3 +272,11 @@ TSWLatexianTemp*
 *.vscode
 *copy*
 *.gz
+
+
+#  personal folders
+temp/*
+SOP/*
+evidences/*
+applications/*
+.*/*
