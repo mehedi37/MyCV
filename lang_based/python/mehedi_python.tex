@@ -76,17 +76,16 @@
 \setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
 
 % HEADER ======================================================
-\newcommand{\header}[9]{ % Added argument for WhatsApp
+\newcommand{\header}[8]{
   \begin{center}
     {\Huge\bfseries\color{primary} #1}\\[0.2em] % Name
     {\Large\color{secondary} #2}\\[0.5em] % Title
     \small % Contact info
     \faPhone* \href{tel:#3}{#3} \quad | \quad
-    \faWhatsapp \href{https://wa.me/#4}{#4} \quad | \quad
-    \faEnvelope \href{mailto:#5}{\hspace{0.5mm}#5} \quad | \quad
-    \faMapMarker {\hspace{1mm}#6 (#7)} \\ % Line break for better spacing if needed
-    \faLinkedin \href{#8}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
-    \faGithub \href{#9}{\hspace{0.5mm}mehedi37}
+    \faEnvelope \href{mailto:#4}{\hspace{0.5mm}#4} \quad | \quad
+    \faMapMarker {\hspace{1mm}#5 (#6)} \\ % Line break for better spacing if needed
+    \faLinkedin \href{#7}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
+    \faGithub \href{#8}{\hspace{0.5mm}mehedi37}
     % --- Uncomment and add your website below ---
     \quad | \quad \faGlobe \href{https://www.mehedi-hasan-maruf.me/}{\hspace{0.5mm}mehedi-hasan-maruf.me}
   \end{center}
@@ -100,7 +99,6 @@
 \header{MD. Mehedi Hasan Maruf} % Name
        {Software Engineer} % Title
        {+8801747090362} % Phone
-       {+8801533300089} % WhatsApp
        {mjmehedihasanoo7@gmail.com} % Email
        {Dhaka} % City
        {Bangladesh} % Country
