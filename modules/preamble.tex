@@ -1,0 +1,108 @@
+% Shared preamble for every modular CV: packages, colors, section style, page-break rules, macros, contact details, headers.
+% Margins default to 0.75in; a CV can override with \geometry{margin=...} right after \input{preamble}.
+% PACKAGES ===================================================
+\usepackage[a4paper, margin=0.75in]{geometry} % Page margins
+\usepackage{amsmath}                          % Math symbols
+\usepackage{amsfonts}                         % Math fonts
+\usepackage{amssymb}                          % Math symbols
+\usepackage{graphicx}                         % Include graphics
+\usepackage[utf8]{inputenc}                   % Input encoding
+\usepackage[T1]{fontenc}                      % Font encoding
+\usepackage{lmodern}                          % Use Latin Modern font (good default)
+\usepackage{hyperref}                         % Clickable links
+\usepackage{xcolor}                           % Color support
+\usepackage{titlesec}                         % Section formatting
+\usepackage{enumitem}                         % Custom lists
+\usepackage{fontawesome5}                     % Icons (optional, requires fontawesome5 package)
+\usepackage{array}                            % Extended column formatting for tables
+\usepackage{tabularx}                         % Flexible-width tables
+
+% COLOR DEFINITIONS (Optional - customize as needed) =================
+\definecolor{primary}{HTML}{2b2b2b}  % Dark grey for text
+\definecolor{secondary}{HTML}{0e76a8} % Professional LinkedIn blue for better visibility
+\definecolor{sectionrule}{HTML}{DDDDDD} % Light grey for rules
+
+% HYPERLINK SETUP =============================================
+% Each CV can add its own \hypersetup{pdfsubject=..., pdfkeywords=...} after \input{preamble}.
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={MD. Mehedi Hasan Maruf - CV},
+    pdfauthor={MD. Mehedi Hasan Maruf}
+}
+
+% PAGE STYLE ==================================================
+\pagestyle{empty} % No page numbers
+\setlength{\parindent}{0pt} % No paragraph indentation
+\setlength{\parskip}{0.3em} % Reduced space between paragraphs
+
+% SECTION FORMATTING ==========================================
+\titleformat{\section}
+  {\Large\bfseries\color{secondary}} % Format: Large, bold, accent color
+  {} % Label
+  {0em} % Separation between label and title
+  {} % Code before title
+  [\titlerule] % Code after title (horizontal rule)
+\titlespacing*{\section}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{primary}} % Format: large, bold, primary color
+  {} % Label
+  {0em} % Separation
+  {} % Code before
+\titlespacing*{\subsection}{0pt}{0.8ex plus .5ex minus .2ex}{0.3ex plus .2ex}
+
+% COMPANY URLs (Update links here) ===========================
+\newcommand{\urlAamira}{https://aamira.ca/}
+\newcommand{\urlOutlier}{https://www.linkedin.com/company/try-outlier/}
+\newcommand{\urlBrainStation}{https://brainstation-23.com/}
+\newcommand{\urlCodeStudio}{https://www.linkedin.com/company/code-studio4/}
+
+% CUSTOM COMMANDS (Optional) =================================
+% Keep entries and section titles together across page breaks ===
+\usepackage{needspace}
+\usepackage{etoolbox}
+\preto\section{\needspace{12\baselineskip}}
+\newcommand{\datedsubsection}[2]{%
+  \needspace{8\baselineskip}\subsection*{#1 \hfill \small\textit{#2}}% Hides subsection number, adds date to the right
+}
+
+\newcommand{\resitem}[1]{\item #1} % Simple list item
+
+% Make lists tighter
+\setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+\setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+
+% CONTACT DETAILS (change them here once) ===================
+\newcommand{\cvname}{MD. Mehedi Hasan Maruf}
+\newcommand{\cvphone}{+8801747090362}
+\newcommand{\cvemail}{mjmehedihasanoo7@gmail.com}
+\newcommand{\cvlinkedin}{https://www.linkedin.com/in/mehedi-hasanmaruf}
+\newcommand{\cvgithub}{https://github.com/mehedi37}
+\newcommand{\cvsite}{https://www.mehedi-hasan-maruf.me/}
+
+% HEADERS ======================================================
+% \cvheader          : software/job CVs (phone + email, then links)
+% \cvheaderacademic  : academic CVs (no phone, links on one line)
+\newcommand{\cvheader}{
+  \begin{center}
+    {\Huge\bfseries\color{primary} \cvname}\\[0.5em]
+    \small
+    \faPhone* \href{tel:\cvphone}{\cvphone} \quad | \quad
+    \faEnvelope \href{mailto:\cvemail}{\hspace{0.5mm}\cvemail} \\
+    \faLinkedin \href{\cvlinkedin}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
+    \faGithub \href{\cvgithub}{\hspace{0.5mm}mehedi37} \quad | \quad
+    \faGlobe \href{\cvsite}{\hspace{0.5mm}mehedi-hasan-maruf.me}
+  \end{center}
+}
+\newcommand{\cvheaderacademic}{
+  \begin{center}
+    {\Huge\bfseries\color{primary} \cvname}\\[0.5em]
+    \small
+    \faEnvelope \href{mailto:\cvemail}{\hspace{0.5mm}\cvemail} \enspace | \enspace
+    \faLinkedin \href{\cvlinkedin}{\hspace{0.5mm}mehedi-hasanmaruf} \enspace | \enspace
+    \faGithub \href{\cvgithub}{\hspace{0.5mm}mehedi37} \enspace | \enspace
+    \faGlobe \href{\cvsite}{\hspace{0.5mm}mehedi-hasan-maruf.me}
+  \end{center}
+}

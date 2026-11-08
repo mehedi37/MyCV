@@ -1,0 +1,213 @@
+\documentclass[10pt, a4paper]{article}
+
+% Lecturer CV for Bangladeshi universities (private and public CSE departments).
+% Cut from SOP/academic_cv/Mehedi_Hasan_Maruf_CV.tex and master/mehedi_master.tex.
+% Order follows what BD hiring committees check first: results (SSC, HSC, B.Sc.),
+% then thesis/publications, teaching, the courses you can take, and industry work.
+% Two pages is normal here. Red [...] text = placeholder still to fill.
+
+% PACKAGES ===================================================
+\usepackage[a4paper, margin=0.55in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% COLORS =====================================================
+\definecolor{primary}{HTML}{2b2b2b}
+\definecolor{secondary}{HTML}{0e76a8}
+\newcommand{\fillme}[1]{\textcolor{red}{[#1]}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={MD. Mehedi Hasan Maruf - CV (Lecturer, CSE)},
+    pdfauthor={MD. Mehedi Hasan Maruf},
+    pdfsubject={Curriculum Vitae for Lecturer position},
+    pdfkeywords={Lecturer, Computer Science, Machine Learning, Causal Inference, Learning Analytics, Software Engineering}
+}
+
+% PAGE STYLE =================================================
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+
+\titleformat{\section}{\Large\bfseries\color{secondary}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+\titleformat{\subsection}{\large\bfseries\color{primary}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.8ex plus .5ex minus .2ex}{0.3ex plus .2ex}
+
+% Keep entries and section titles together across page breaks ===
+\usepackage{needspace}
+\usepackage{etoolbox}
+\preto\section{\needspace{12\baselineskip}}
+\newcommand{\datedsubsection}[2]{\needspace{8\baselineskip}\subsection*{#1 \hfill \small\textit{#2}}}
+\newcommand{\resitem}[1]{\item #1}
+
+\setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.3ex}
+\setlist[description]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.2ex}
+
+% HEADER =====================================================
+\newcommand{\header}[6]{
+  \begin{center}
+    {\Huge\bfseries\color{primary} #1}\\[0.5em] % Name
+    \small % Contact info
+    \faPhone* \href{tel:#2}{#2} \quad | \quad
+    \faEnvelope \href{mailto:#3}{\hspace{0.5mm}#3} \\
+    \faLinkedin \href{#4}{\hspace{0.5mm}mehedi-hasanmaruf} \quad | \quad
+    \faGithub \href{#5}{\hspace{0.5mm}mehedi37} \quad | \quad
+    \faGlobe \href{#6}{\hspace{0.5mm}mehedi-hasan-maruf.me}
+  \end{center}
+}
+
+\begin{document}
+\color{primary}
+
+\header{MD. Mehedi Hasan Maruf}
+       {+8801747090362}
+       {mjmehedihasanoo7@gmail.com}
+       {https://www.linkedin.com/in/mehedi-hasanmaruf}
+       {https://github.com/mehedi37}
+       {https://www.mehedi-hasan-maruf.me/}
+
+% --- Objective ---
+\section{Career Objective}
+I want to teach undergraduate computer science and keep doing research in machine learning and learning analytics. My B.Sc.\ thesis studied which courses in a curriculum hold students back and why, so I came to teaching through the same questions a lecturer deals with every semester. I also bring several years of production software work, which I can use to make programming, database and software engineering courses closer to what students will meet in industry.
+
+% --- Education ---
+\section{Education}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{@{}l X l l l@{}}
+\toprule
+\textbf{Degree} & \textbf{Institution} & \textbf{Board} & \textbf{Result} & \textbf{Year} \\
+\midrule
+B.Sc.\ Engg.\ in CSE & Rajshahi University of Engineering \& Technology (RUET) & -- & CGPA 3.75 / 4.00 (Honours) & 2024$^{*}$ \\
+HSC (Science) & Police Lines School and College, Rangpur & Dinajpur & GPA 5.00 / 5.00 & 2020 \\
+SSC (Science) & Police Lines School and College, Rangpur & Dinajpur & GPA 5.00 / 5.00 & 2018 \\
+\bottomrule
+\end{tabularx}
+
+{\small $^{*}$Examination year 2024 (session 2020--21). Because of the COVID-19 delay, classes ran Mar 2022 -- Aug 2026; the degree was awarded on 11 Aug 2026.}
+
+\begin{itemize}
+    \resitem{Class of 178; 160 credits; BAETE-accredited program (Washington Accord). CGPA rose from 3.62 after the first year, with semester GPAs of 3.96, 3.88 and 3.84 in three consecutive semesters.}
+    \resitem{A+ in Data Structures, Database Systems, Operating Systems, Theory of Computation, Security and Privacy (theory and lab), Applied Statistics and Queuing Theory, and the B.Sc.\ Thesis. A in Algorithm Analysis and Design, Artificial Intelligence (lab A+), Data Mining and Computer Networks; A$-$ in Machine Learning.}
+\end{itemize}
+
+% --- Thesis / Research ---
+\section{Thesis and Research}
+
+\datedsubsection{TRACE: Curriculum Bottleneck Detection and Causal Validation}{Jul 2025 -- Aug 2026}
+\textit{B.Sc.\ Thesis, Dept.\ of CSE, RUET}
+\begin{itemize}
+    \resitem{Started from my own class, where about a third failed one first-year mathematics course (about 4\% fail a typical course). Does such a course hold students back, or only show who was already behind?}
+    \resitem{Built TRACE, which ranks courses by prerequisite-graph position (NetworkX, GAT), a Bayesian fail-rate model, and student-feedback sentiment (DeBERTa, VADER).}
+    \resitem{Reached F-measure 0.75 and NDCG@10 0.81 on a synthetic curriculum with planted bottlenecks; on a local university's curriculum, a domain expert agreed with 8 of its top 10 courses.}
+    \resitem{Used causal inference to test what drives failure in a flagged module: on 23,369 OULAD students, DoWhy estimated that high assignment engagement raised held-out pass rates by 19.9 points ($p<0.01$).}
+\end{itemize}
+
+\subsection*{Publications}
+\begin{itemize}
+    \resitem{\textit{When Agreement Misleads: Auditing Course Shortlists in Curriculum Analytics.} Submitted to the International Conference on Learning Analytics \& Knowledge (LAK 2027). Under review.}
+\end{itemize}
+
+\textbf{Research interests:} machine learning and NLP, causal inference, graph learning, learning analytics, evaluation of LLM and retrieval-augmented systems.
+
+% --- Teaching ---
+\section{Teaching and Mentoring}
+\begin{itemize}
+    \resitem{\textbf{Competitive Programming Mentor}, RUET Advanced Programming Lab (RAPL), Aug -- Nov 2023. Taught number theory and graph traversal to junior students, prepared the problem sets and ran biweekly contests.}
+    \resitem{\textbf{Class Representative}, 4th year odd semester, Dept.\ of CSE, RUET. Handled schedules, exams and students' problems between my batch and the course adviser.}
+    \resitem{\textbf{Team Representative}, Brain Station 23 industrial training, Mar 2025. Represented a 15-person trainee cohort.}
+\end{itemize}
+
+\subsection*{Courses I can teach}
+\begin{description}[style=unboxed, leftmargin=0pt]
+    \item[Programming and core CS:] Structured Programming (C), Object-Oriented Programming, Data Structures, Algorithms, Discrete Mathematics, Theory of Computation, Operating Systems
+    \item[Data and AI:] Database Systems, Artificial Intelligence, Machine Learning, Data Mining, Applied Statistics
+    \item[Systems and software:] Software Engineering, Web Engineering, Computer Networks, Computer Security
+    \item[Labs:] all of the above, plus project and capstone supervision on web, backend and AI applications
+\end{description}
+
+% --- Experience ---
+\section{Professional Experience}
+
+\datedsubsection{Software Engineer II}{Jan 2025 -- Present}
+\textit{Aamira Software Solutions} \href{https://aamira.ca/}{\small\faExternalLink*}, Kokomo, Indiana, USA (remote)
+\begin{itemize}
+    \resitem{Raised client response rates by 30\% by leading development of a customer relationship management (CRM) system, and made the application 60\% faster by optimizing its Supabase queries.}
+    \resitem{Cut API response time by 40\% by designing a TypeScript microservice backend.}
+\end{itemize}
+
+\datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
+\textit{Code Studio} \href{https://www.linkedin.com/company/code-studio4/}{\small\faExternalLink*}, Rajshahi, Bangladesh
+\begin{itemize}
+    \resitem{Kept 12 Linux servers at 99.8\% uptime, cut deployment time by 40\% by reworking the CI/CD pipelines, and moved 5 client environments onto Docker.}
+    \resitem{Wrote JavaScript/TypeScript and Python (Django) backends used by thousands of people a day.}
+\end{itemize}
+
+\datedsubsection{AI Code Reviewer / RLHF Evaluator}{Oct 2024 -- Jan 2026}
+\textit{Outlier} \href{https://www.linkedin.com/company/try-outlier/}{\small\faExternalLink*} (remote)
+\begin{itemize}
+    \resitem{Reviewed code for AI systems used by 50,000+ people a day; evaluated and annotated large language model responses for correctness, consistency and safety.}
+\end{itemize}
+
+\datedsubsection{Industrial Trainee}{Mar 2025}
+\textit{Brain Station 23} \href{https://brainstation-23.com/}{\small\faExternalLink*}, Dhaka, Bangladesh. Built StudentAI (see Projects).
+
+% --- Projects ---
+\section{Selected Projects}
+\begin{itemize}
+    \resitem{\textbf{Omnious} \href{https://www.mehedi-hasan-maruf.me/projects/omnious}{\faExternalLink*} (2025 -- present): a visual debugging tool that draws a program's code graph, animates execution traces and lets you ask an AI assistant about errors. Fastify, tRPC, Next.js, PostgreSQL with pgvector.}
+    \resitem{\textbf{StudentAI} \href{https://www.mehedi-hasan-maruf.me/projects/student-ai}{\faExternalLink*} (2025): document Q\&A, YouTube lecture analysis and quiz generation for students, with semantic retrieval and conversation memory. Takes PDFs, images and video.}
+\end{itemize}
+
+% --- Skills ---
+\section{Skills}
+\begin{description}[style=unboxed, leftmargin=0pt]
+    \item[AI/ML:] PyTorch, Hugging Face Transformers, graph neural networks, LangChain, RAG, DoWhy (causal inference), Bayesian modeling
+    \item[Languages:] C, C++, Python, TypeScript, JavaScript, SQL
+    \item[Web and systems:] NestJS, Next.js (React), Django, FastAPI, PostgreSQL, MySQL, MongoDB, Docker, GitHub Actions, Linux server administration
+\end{description}
+
+% --- Awards ---
+\section{Awards and Certifications}
+\begin{itemize}
+    \resitem{4th place, RUET CodeSmash team programming contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} (Mar 2023)}
+    \resitem{4th place, RUET CodeSpark individual programming contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} (Oct 2022)}
+    \resitem{Digital Accessibility Training, a2i, Government of Bangladesh \href{https://drive.google.com/file/d/1r0YTwNWt2G--afHjJkN7hf9taI2d445W/view?usp=sharing}{\faExternalLink*} (Oct 2025)}
+    \resitem{PHP (Laravel), EDGE Project, ICT Division \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{\faExternalLink*} (Feb 2025)}
+\end{itemize}
+
+% --- Personal ---
+\section{Personal Information}
+\begin{tabularx}{\textwidth}{@{}l X l l@{}}
+Date of birth: & 03 September 2002 & Nationality: & Bangladeshi \\
+Father's name: & MD ABDUL KHALEQUE MONDOL & Mother's name: & MOST MASUMA BEGUM \\
+Languages: & Bangla, English & Permanent address: & Gaibandha \\
+\end{tabularx}
+
+% --- References ---
+\section{References}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{@{}X X X@{}}
+\textbf{Prof.\ Dr.\ Md.\ Shahid Uz Zaman} & \textbf{Mohiuddin Ahmed} & \textbf{Dr.\ Md.\ Nour Hossain} \\
+Professor and Head, Dept.\ of CSE, RUET & Assistant Professor (on study leave), Dept.\ of CSE, RUET & Assistant Professor, University at Albany, USA \\
+\faEnvelope\ \href{mailto:zaman@cse.ruet.ac.bd}{zaman@cse.ruet.ac.bd} & \faEnvelope\ \href{mailto:m.ahmed@deakin.edu.au}{m.ahmed@deakin.edu.au} & \faEnvelope\ \href{mailto:mhossain6@albany.edu}{mhossain6@albany.edu} \\
+Taught Data Structures; thesis examiner & Course adviser for four years & Research advisor; current employer \\
+\end{tabularx}
+
+% Swap in for Nour if a committee wants a senior RUET name instead:
+% \textbf{Prof.\ Dr.\ Boshir Ahmed}, Dean, Faculty of ECE, RUET, boshir@cse.ruet.ac.bd
+
+\end{document}

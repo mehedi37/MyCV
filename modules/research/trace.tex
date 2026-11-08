@@ -1,0 +1,10 @@
+% Research: TRACE (B.Sc. thesis). No supervisor/advisor line by design.
+\datedsubsection{TRACE: Curriculum Bottleneck Detection \& Causal Validation}{Jul 2025 -- Aug 2026}
+\textit{B.Sc. Thesis, Dept. of CSE, RUET}
+\begin{itemize}
+    \resitem{The question came from my own class. About a third of us failed one first-year mathematics course, while about 4\% fail a typical course. Did that course hold students back, or only show who was already behind?}
+    \resitem{Built TRACE to find courses like it. It ranks each course by its place in the prerequisite graph (NetworkX, GAT), a Bayesian model of its fail rate, and the tone of student feedback (DeBERTa, VADER).}
+    \resitem{Tested TRACE on a synthetic curriculum with known, planted bottlenecks (F-measure 0.75, NDCG@10 0.81). On a real university curriculum, a domain expert agreed with 8 of its top 10.}
+    \resitem{Used causal inference to test what drives failure in a flagged module. On 23,369 Open University students (OULAD), a DoWhy backdoor-adjusted model estimated that high assignment engagement raised held-out pass rates by 19.9 percentage points ($p<0.01$, E-value 1.89).}
+    \resitem{After peer review, rebuilt the study into a paper, \textit{When Agreement Misleads: Auditing Course Shortlists in Curriculum Analytics}, now under review at LAK 2027. It gives an exact bound on how much a combined shortlist can change top-$k$ precision. In simulation, sources with a shared bias picked mostly the same courses (88\% overlap), yet only 15\% of those picks were real bottlenecks.}
+\end{itemize}

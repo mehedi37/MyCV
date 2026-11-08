@@ -277,6 +277,7 @@ TSWLatexianTemp*
 #  personal folders
 temp/*
 SOP/*
+LOR/*
 evidences/*
 applications/*
 .*/*

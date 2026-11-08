@@ -81,8 +81,12 @@
 \newcommand{\urlCodeStudio}{https://www.linkedin.com/company/code-studio4/}
 
 % CUSTOM COMMANDS ============================================
+% Keep entries and section titles together across page breaks ===
+\usepackage{needspace}
+\usepackage{etoolbox}
+\preto\section{\needspace{12\baselineskip}}
 \newcommand{\datedsubsection}[2]{%
-  \subsection*{#1 \hfill \small\textit{#2}}%
+  \needspace{8\baselineskip}\subsection*{#1 \hfill \small\textit{#2}}%
 }
 \newcommand{\resitem}[1]{\item #1}
 
@@ -105,7 +109,7 @@
 
 % --- Career Objective ---
 % \section{Career Objective}
-% A first-class Computer Science and Engineering graduate of RUET with nearly four years of
+% A first-class Computer Science and Engineering graduate of RUET with more than three years of
 % professional software engineering experience, seeking to join Dutch-Bangla Bank Limited as a
 % \appliedpost. Aiming to apply proven analytical and problem-solving ability, a strong technology
 % foundation, and a record of delivering measurable results in team environments to support the
@@ -152,10 +156,10 @@ Permanent Address & Dakshin Hatbamuni, Shadullahpur, Gaibandha, Rangpur \\
 \textbf{Degree / Examination} & \textbf{Institution} & \textbf{Board / University} & \textbf{Year} & \textbf{GPA / CGPA} \\
 \hline
 B.Sc. Engineering in Computer Science \& Engineering (4-year)
-  & RUET, Rajshahi
+  & Rajshahi University of Engineering \& Technology (RUET)
   & RUET
-  & 2026
-  & \textbf{3.75} / 4.00 \\
+  & 2024$^{*}$
+  & \textbf{3.75} / 4.00 (Honours) \\
 \hline
 Higher Secondary Certificate (HSC), Science
   & Police Lines School \& College, Rangpur
@@ -170,6 +174,8 @@ Secondary School Certificate (SSC), Science
   & 5.00 / 5.00 \\
 \hline
 \end{tabularx}
+
+{\footnotesize $^{*}$Examination year 2024 (session 2020--21). Because of the COVID-19 delay, classes ran Mar 2022 -- Aug 2026; degree awarded 11 Aug 2026.}
 \normalsize
 \setlength{\tabcolsep}{6pt}
 
@@ -179,20 +185,20 @@ Secondary School Certificate (SSC), Science
 \datedsubsection{Software Engineer II --- Aamira Software Solutions}{Jan 2025 -- Present}
 \textit{Kokomo, Indiana, USA (remote)} \href{\urlAamira}{\small\faExternalLink*}
 
-Led development of a customer relationship management platform, raising client response rates by 30\%. Designed and implemented a service-oriented backend architecture that cut system response time by 40\%. Restructured database queries, improving application performance by 60\%.
+Raised client response rates by 30\% by leading development of a customer relationship management platform. Cut system response time by 40\% by designing and implementing a service-oriented backend architecture. Improved application performance by 60\% by restructuring database queries.
 
 \datedsubsection{Junior Software Engineer --- Code Studio}{Nov 2022 -- Apr 2024}
 \textit{Rajshahi, Bangladesh} \href{\urlCodeStudio}{\small\faExternalLink*}
 
-Built and maintained backend systems serving thousands of daily users while completing the B.Sc. Engineering programme full time. Administered a 12-server Linux infrastructure at \textbf{99.8\% uptime} and cut deployment time by 40\% through streamlined release processes. Standardised deployment across 5 client environments, cutting configuration errors and support overhead.
+Kept a 12-server Linux infrastructure at 99.8\% uptime and cut deployment time by 40\% through streamlined release processes. Standardised deployment across 5 client environments, cutting configuration errors and support overhead. Built and maintained backend systems serving thousands of daily users while studying full time.
 
 % --- Core Competencies ---
 \section{Core Competencies}
 \begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.3ex]
-    \item[Analytical \& Problem Solving:] Trained in algorithmic problem solving through competitive programming (twice placed 4th at RUET contests) and applied daily to diagnosing performance and data problems in production systems.
-    \item[Communication:] Fluent written and spoken \textbf{Bangla} and \textbf{English}; experienced in stakeholder-facing requirement discussions, cross-border remote collaboration with a US-based employer, and classroom instruction.
+    \item[Analytical \& Problem Solving:] Trained in algorithmic problem solving through competitive programming (twice placed 4th at RUET contests) and applied daily to performance and data problems in production systems.
+    \item[Communication:] Fluent written and spoken Bangla and English; experienced in stakeholder-facing requirement discussions, cross-border remote collaboration with a US-based employer, and classroom instruction.
     \item[Teamwork \& Leadership:] Served as elected Team Representative for a 15-member cohort and as mentor to a student cohort; comfortable both leading and contributing within a team.
-    \item[Adaptability \& Integrity:] Delivered across four organisations, three technology stacks, and remote/on-site settings; consistent record of meeting commitments while studying full time.
+    \item[Adaptability \& Integrity:] Worked across four organisations and three tech stacks, remote and on-site.
     \item[Willingness to Relocate:] Fully willing to work at any branch or office location within Bangladesh.
 \end{description}
 
@@ -209,30 +215,30 @@ Built and maintained backend systems serving thousands of daily users while comp
 % --- Academic Research ---
 \section{Academic Research}
 \datedsubsection{B.Sc. Thesis --- TRACE: A Multi-Modal Framework \\ for Curriculum Bottleneck Detection}{Jul 2025 -- Aug 2026}
-\textit{Department of CSE, RUET} \quad|\quad \textit{Supervisor:} Farjana Parvin, Assistant Professor
+\textit{Department of CSE, RUET}
 
-Developed a statistical framework combining network analysis, \textbf{Bayesian modelling}, and sentiment analysis to detect curriculum bottlenecks, roughly doubling the accuracy of the best single-signal baseline. Validated findings causally on \textbf{23,369 student records} via backdoor-adjustment regression with bootstrap confidence intervals and sensitivity analysis, an approach applicable to risk and portfolio analytics.
+Asked which university courses hold students back, and built a statistical framework combining network analysis, Bayesian modelling, and sentiment analysis to find them (F-measure 0.75 on a synthetic benchmark). Ran a causal check on 23,369 student records with backdoor-adjustment regression, bootstrap confidence intervals and sensitivity analysis, an approach applicable to risk and portfolio analytics.
 
 % --- Selected Projects ---
 \section{Selected Projects}
-\datedsubsection{StudentAI --- AI-Powered Learning Platform}{Mar 2025}
+\datedsubsection{StudentAI \textbar\ AI-Powered Learning Platform}{Mar 2025}
 
 Built and deployed an end-to-end AI assistant during industrial attachment at Brain Station 23, covering document understanding, question answering, and automated assessment generation. Implemented secure authentication and shipped it to production.
 
 % --- Training & Certifications ---
 \section{Training \& Certifications}
 \begin{itemize}
-    \resitem{\textbf{Digital Accessibility Training (DAT)} --- a2i, Government of Bangladesh \href{https://drive.google.com/file/d/1r0YTwNWt2G--afHjJkN7hf9taI2d445W/view?usp=sharing}{\faExternalLink*} \hfill Oct 2025}
-    \resitem{\textbf{Industrial Training Certificate} --- Brain Station 23 \href{https://drive.google.com/file/d/1_Smp7BMAuuKgN4McPJv-UFcsK27mXtBj/view?usp=sharing}{\faExternalLink*} \hfill Mar 2025}
-    \resitem{\textbf{Web Application Development (PHP / Laravel)} --- EDGE Project, ICT Division, Government of Bangladesh \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{\faExternalLink*} \hfill Feb 2025}
-    \resitem{\textbf{Experience Certificate} --- Code Studio \href{https://drive.google.com/file/d/195bms3HX2eF-QGjPypnlaZmQLn2nv7xT/view?usp=sharing}{\faExternalLink*} \hfill Apr 2024}
+    \resitem{Digital Accessibility Training (DAT) --- a2i, Government of Bangladesh \href{https://drive.google.com/file/d/1r0YTwNWt2G--afHjJkN7hf9taI2d445W/view?usp=sharing}{\faExternalLink*} \hfill Oct 2025}
+    \resitem{Industrial Training Certificate --- Brain Station 23 \href{https://drive.google.com/file/d/1_Smp7BMAuuKgN4McPJv-UFcsK27mXtBj/view?usp=sharing}{\faExternalLink*} \hfill Mar 2025}
+    \resitem{Web Application Development (PHP / Laravel) --- EDGE Project, ICT Division, Government of Bangladesh \href{https://training.edge.gov.bd/certificate-validation?certificate_no=EDGE-DSTS-116-6631-00012}{\faExternalLink*} \hfill Feb 2025}
+    \resitem{Experience Certificate --- Code Studio \href{https://drive.google.com/file/d/195bms3HX2eF-QGjPypnlaZmQLn2nv7xT/view?usp=sharing}{\faExternalLink*} \hfill Apr 2024}
 \end{itemize}
 
 % --- Achievements & Extracurricular ---
 \section{Achievements \& Extracurricular Activities}
 \begin{itemize}
-    \resitem{\textbf{4th Place} --- RUET CodeSmash, inter-departmental team programming contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} \hfill Mar 2023}
-    \resitem{\textbf{4th Place} --- RUET CodeSpark, individual programming contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} \hfill Oct 2022}
+    \resitem{4th Place --- RUET CodeSmash, inter-departmental team programming contest \href{https://drive.google.com/file/d/1ESOpq2KagzqafmpEjau5RvhTNeop4FKN/view?usp=sharing}{\faExternalLink*} \hfill Mar 2023}
+    \resitem{4th Place --- RUET CodeSpark, individual programming contest \href{https://drive.google.com/file/d/18CvmRA4xr3TkCpSjNxsQMxBSmh_yQUQz/view?usp=sharing}{\faExternalLink*} \hfill Oct 2022}
     \resitem{Team Representative, 15-member industrial training cohort, Brain Station 23 \hfill 2025}
     \resitem{Mentor and curriculum designer, RUET Advanced Programming Lab (RAPL) \hfill 2023}
 \end{itemize}
