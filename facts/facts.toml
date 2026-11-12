@@ -1,0 +1,209 @@
+# Single source of truth for every number, date and status that appears in
+# CVs, statements, letters, form answers and emails.
+#
+# Edit a value HERE, then run:   python3 facts/factsync.py all
+#   build -> regenerates modules/facts.tex (LaTeX macros for every CV) and facts/FACTS.md
+#   fix   -> rewrites status phrases (e.g. "under review at LAK 2027" -> "accepted at LAK 2027")
+#            in statements, letters and drafts that cannot use LaTeX macros
+#   check -> lists anything still out of date: retired numbers, stale status, style slips
+# Then rebuild the CVs (see facts/README.md).
+#
+# Every [x] key becomes a LaTeX macro \factXKey (key in CamelCase), e.g.
+# [lak] merge -> \factLakMerge. Never type these values into a CV by hand.
+
+[meta]
+updated = "2026-11-09"
+
+[edu]
+university = "Rajshahi University of Engineering & Technology"
+short = "RUET"
+degree = "B.Sc. Engineering, Computer Science and Engineering"
+start = "Mar 2022"
+end = "Aug 2026"
+graduation = "11 Aug 2026"      # date printed on the provisional certificate
+exam_year = "2024"              # only for Bangladeshi forms that ask "year of passing"
+session = "2020-21"
+cgpa = "3.75"
+scale = "4.00"
+honours = "Honours"
+
+[exp]
+years = "3+ years"              # CV wording. Never "almost 4" / "nearly four".
+years_prose = "more than three years"
+aamira_title = "Software Engineer II"
+aamira_dates = "Jan 2025 -- Present"
+aamira_crm = "30%"              # client response rates
+aamira_api = "40%"              # API response time cut
+aamira_speed = "60%"            # app faster after query work
+codestudio_dates = "Nov 2022 -- Apr 2024"
+codestudio_servers = "12"
+codestudio_uptime = "99.8%"
+codestudio_deploy = "40%"
+codestudio_envs = "5"
+outlier_dates = "Oct 2024 -- Jan 2026"
+outlier_months = "15 months"
+outlier_users = "50,000+"
+
+[trace]
+students = "23,369"             # OULAD records in the causal check
+effect = "19.9"                 # percentage points
+p = "p < 0.01"
+evalue = "1.89"
+
+[lak]
+id = "682"
+venue = "LAK 2027"
+venue_long = "the Learning Analytics and Knowledge conference (LAK 2027)"
+title = "When Agreement Misleads: Auditing Course Shortlists in Curriculum Analytics"
+# under_review | accepted | rejected. On 24 Nov 2026 set this and run `factsync.py all`.
+status = "under_review"
+decision_date = "24 Nov 2026"
+conditions = "seven"            # simulated conditions
+curricula = "30"                # curricula per condition
+merge = "0.65"                  # top-8 precision, round-robin merging (coverage condition)
+average = "0.32"                # top-8 precision, rank averaging (coverage condition)
+shared_average = "0.60"         # when problems show up in every signal, averaging wins
+shared_merge = "0.41"
+overlap = "88%"                 # shared bias: shortlist overlap
+precision = "15%"               # shared bias: top-8 precision (chance is 0.133)
+
+# Status-dependent phrases. Each becomes a macro too (\factLakAt, \factLakIs, ...),
+# taking its text from the table that matches [lak].status.
+[lak_phrases.under_review]
+at = "under review at LAK 2027"
+is = "is under review at LAK 2027"
+now = "now under review at LAK 2027"
+paren = "under review, LAK 2027"
+
+[lak_phrases.accepted]
+at = "accepted at LAK 2027"
+is = "was accepted at LAK 2027"
+now = "accepted at LAK 2027"
+paren = "accepted, LAK 2027"
+
+# How `fix` rewrites prose when the status moves from under_review to accepted.
+# Applied in order, only where LAK 2027 / Learning Analytics follows within the sentence.
+[[lak_transition.accepted]]
+from = "is now under review at"
+to = "has been accepted at"
+[[lak_transition.accepted]]
+from = "is under review at"
+to = "has been accepted at"
+[[lak_transition.accepted]]
+from = "now under review at"
+to = "accepted at"
+[[lak_transition.accepted]]
+from = "under review at"
+to = "accepted at"
+[[lak_transition.accepted]]
+from = "(under review, LAK 2027)"
+to = "(accepted, LAK 2027)"
+[[lak_transition.accepted]]
+from = "a paper under review at an international conference"
+to = "a paper accepted at an international conference"
+anywhere = true   # Boshir Ahmed letter does not name the venue
+# For "rejected" there is no automatic rewrite: `check` lists every mention to edit by hand.
+
+# Numbers and phrases that must never come back. `check` flags them everywhere
+# except the files listed in [scan].allow_retired.
+[[retired]]
+pattern = 'F-measure( of)? 0\.75|F 0\.75'
+why = "ICDM 2026 single run (rejected paper). Use the LAK numbers."
+[[retired]]
+pattern = 'NDCG@10( of)? 0\.81'
+why = "ICDM 2026 single run (rejected paper). Use the LAK numbers."
+[[retired]]
+pattern = '0\.775|0\.853'
+why = "Thesis-table 30-seed means. Use the LAK numbers."
+[[retired]]
+pattern = '8 of (its |the |my )?top ?10'
+why = "Expert check from ICDM/thesis; LAK reports a 5-course reference as descriptive only."
+[[retired]]
+pattern = '(nearly|almost) (four|4) years( of)? (experience|industry|work|as a software)'
+why = "Experience is '3+ years' / 'more than three years'."
+[[retired]]
+pattern = 'double the baseline|Preparation Paradox'
+why = "Dropped claims (CV sync 2 Nov 2026)."
+
+# Style rules (warnings). Same scope as retired.
+[[style]]
+pattern = '—'
+why = "Em dash in prose. Use a comma, colon, period or parentheses."
+ext = [".md"]
+[[style]]
+pattern = '(?i)\b(delve|tapestry|testament to|pivotal|showcas(e|ing)|underscores?)\b'
+why = "Stock AI word; rewrite with the plain claim."
+ext = [".md", ".tex"]
+[[style]]
+pattern = '(?i)\bnot (just|only|merely)\b[^.]{0,80}\bbut\b'
+why = "'Not X but Y' pattern; state the claim directly."
+ext = [".md", ".tex"]
+[[style]]
+pattern = 'Outcome:'
+why = "No 'Outcome:' labels."
+ext = [".md", ".tex"]
+
+[scan]
+# Folders and files that `check` and `fix` read (relative to the repo root).
+include = ["Mehedi_CV.tex", "modules", "lang_based", "master", "cover_letter", "SOP", "LOR"]
+ext = [".tex", ".md"]
+# Never read or rewrite: archives, sent emails (a record of what went out), dropped
+# applications, research notes and reference material.
+exclude = [
+  "archive", "old", "reference_sops", "papers", "site_snapshot",
+  "SOP/10_NAIST_OIST",
+  "SOP/11_SE_Faculty_Shortlist",
+  "SOP/01_Sajal_Saha_Brock/email_drafts.md",
+  "SOP/02_Anwar_Haque_Western/email_drafts.md",
+  "SOP/03_Nour_Hossain_UAlbany/draft_introduction_email.md",
+  "SOP/03_Nour_Hossain_UAlbany/how_to_use_reference.md",
+  "SOP/05_Osmar_Zaiane_Alberta/email_drafts.md",
+  "SOP/06_Jimmy_Lin_Waterloo/email_drafts.md",
+  "SOP/08_NZ_Auckland/email_drafts.md",
+  "SOP/09_Peter_Chen_Concordia/email_drafts.md",
+  "SOP/12_Chanchal_Roy_USask/email_drafts.md",
+  "SOP/followups_2026-10-28.md",
+  "SOP/README.md",
+  "modules/facts.tex",
+]
+# CV sources (path prefixes). In these, the values below must be written as macros
+# (\factLakMerge etc.), never typed, so changing the TOML changes every CV.
+cv_files = [
+  "Mehedi_CV.tex", "modules/", "lang_based/", "master/", "SOP/academic_cv/",
+  "SOP/05_Osmar_Zaiane_Alberta/Mehedi_Hasan_Maruf_CV.tex",
+  "SOP/06_Jimmy_Lin_Waterloo/Mehedi_Hasan_Maruf_CV.tex",
+]
+cv_macro_only = [
+  "edu.cgpa", "exp.years", "exp.codestudio_uptime", "exp.outlier_users",
+  "trace.students", "trace.effect", "trace.evalue",
+  "lak.merge", "lak.average", "lak.shared_average", "lak.shared_merge",
+  "lak.overlap", "lak.precision", "lak_phrases.at",
+]
+# What `factsync.py rebuild` compiles (expected pages in the comment).
+rebuild = [
+  "Mehedi_CV.tex",                                   # 2
+  "master/mehedi_master.tex",                        # 3
+  "SOP/academic_cv/Mehedi_Hasan_Maruf_CV.tex",       # 2
+  "SOP/05_Osmar_Zaiane_Alberta/Mehedi_Hasan_Maruf_CV.tex",  # 2
+  "SOP/06_Jimmy_Lin_Waterloo/Mehedi_Hasan_Maruf_CV.tex",    # 2
+  "lang_based/ai/mehedi_ai.tex",                     # 2
+  "lang_based/banks/mehedi_dbbl.tex",                # 2
+  "lang_based/brainstation/mehedi_ts_js.tex",        # 2
+  "lang_based/dot_net/mehedi_dot_net.tex",           # 2
+  "lang_based/google/mehedi_google.tex",             # 1
+  "lang_based/lecturer/mehedi_lecturer.tex",         # 2 (full; a longer bullet spills to 3)
+  "lang_based/optimizely/mehedi_op.tex",             # 2
+  "lang_based/python/mehedi_python.tex",             # 2
+  "lang_based/research/mehedi_research.tex",         # 2
+  "lang_based/ts_js/mehedi_ts_js.tex",               # 2
+  "SOP/01_Sajal_Saha_Brock/final_SOP/Mehedi_Hasan_Maruf_Brock_Statement_of_Intent.tex",   # 2
+  "SOP/01_Sajal_Saha_Brock/final_SOP/Mehedi_Hasan_Maruf_Brock_Research_Interests.tex",   # 1 (hard limit)
+  "SOP/03_Nour_Hossain_UAlbany/final_SOP/Mehedi_Hasan_Maruf_UAlbany_SOG.tex",
+]
+# Files that may name retired numbers on purpose (to explain them). Status and style still apply.
+allow_retired = [
+  "SOP/01_Sajal_Saha_Brock/profile_notes.md",
+  "SOP/02_Anwar_Haque_Western/profile_notes.md",
+  "SOP/03_Nour_Hossain_UAlbany/final_SOP/SOG_fact_sheet.md",
+  "SOP/04_Erasmus_Mundus/Erasmus_Second_Opinion_Brief.md",
+]

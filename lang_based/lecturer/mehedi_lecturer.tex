@@ -1,4 +1,5 @@
 \documentclass[10pt, a4paper]{article}
+\makeatletter\def\input@path{{modules/}{../modules/}{../../modules/}}\makeatother\input{facts} % numbers from facts/facts.toml
 
 % Lecturer CV for Bangladeshi universities (private and public CSE departments).
 % Cut from SOP/academic_cv/Mehedi_Hasan_Maruf_CV.tex and master/mehedi_master.tex.
@@ -91,7 +92,7 @@ I want to teach undergraduate computer science and keep doing research in machin
 \toprule
 \textbf{Degree} & \textbf{Institution} & \textbf{Board} & \textbf{Result} & \textbf{Year} \\
 \midrule
-B.Sc.\ Engg.\ in CSE & Rajshahi University of Engineering \& Technology (RUET) & -- & CGPA 3.75 / 4.00 (Honours) & 2024$^{*}$ \\
+B.Sc.\ Engg.\ in CSE & Rajshahi University of Engineering \& Technology (RUET) & -- & CGPA \factEduCgpa{} / \factEduScale{} (Honours) & 2024$^{*}$ \\
 HSC (Science) & Police Lines School and College, Rangpur & Dinajpur & GPA 5.00 / 5.00 & 2020 \\
 SSC (Science) & Police Lines School and College, Rangpur & Dinajpur & GPA 5.00 / 5.00 & 2018 \\
 \bottomrule
@@ -112,8 +113,8 @@ SSC (Science) & Police Lines School and College, Rangpur & Dinajpur & GPA 5.00 /
 \begin{itemize}
     \resitem{Started from my own class, where about a third failed one first-year mathematics course (about 4\% fail a typical course). Does such a course hold students back, or only show who was already behind?}
     \resitem{Built TRACE, which ranks courses by prerequisite-graph position (NetworkX, GAT), a Bayesian fail-rate model, and student-feedback sentiment (DeBERTa, VADER).}
-    \resitem{Reached F-measure 0.75 and NDCG@10 0.81 on a synthetic curriculum with planted bottlenecks; on a local university's curriculum, a domain expert agreed with 8 of its top 10 courses.}
-    \resitem{Used causal inference to test what drives failure in a flagged module: on 23,369 OULAD students, DoWhy estimated that high assignment engagement raised held-out pass rates by 19.9 points ($p<0.01$).}
+    \resitem{In simulation, merging the signals' shortlists beat rank averaging when each planted bottleneck showed up in only one signal (top-8 precision \factLakMerge{} against \factLakAverage{}), and lost when they showed up in every signal.}
+    \resitem{Used causal inference to test what drives failure in a flagged module: on \factTraceStudents{} OULAD students, DoWhy estimated that high assignment engagement raised held-out pass rates by \factTraceEffect{} points ($p<0.01$).}
 \end{itemize}
 
 \subsection*{Publications}
@@ -145,21 +146,21 @@ SSC (Science) & Police Lines School and College, Rangpur & Dinajpur & GPA 5.00 /
 \datedsubsection{Software Engineer II}{Jan 2025 -- Present}
 \textit{Aamira Software Solutions} \href{https://aamira.ca/}{\small\faExternalLink*}, Kokomo, Indiana, USA (remote)
 \begin{itemize}
-    \resitem{Raised client response rates by 30\% by leading development of a customer relationship management (CRM) system, and made the application 60\% faster by optimizing its Supabase queries.}
-    \resitem{Cut API response time by 40\% by designing a TypeScript microservice backend.}
+    \resitem{Raised client response rates by \factExpAamiraCrm{} by leading development of a customer relationship management (CRM) system, and made the application \factExpAamiraSpeed{} faster by optimizing its Supabase queries.}
+    \resitem{Cut API response time by \factExpAamiraApi{} by designing a TypeScript microservice backend.}
 \end{itemize}
 
 \datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
 \textit{Code Studio} \href{https://www.linkedin.com/company/code-studio4/}{\small\faExternalLink*}, Rajshahi, Bangladesh
 \begin{itemize}
-    \resitem{Kept 12 Linux servers at 99.8\% uptime, cut deployment time by 40\% by reworking the CI/CD pipelines, and moved 5 client environments onto Docker.}
+    \resitem{Kept \factExpCodestudioServers{} Linux servers at \factExpCodestudioUptime{} uptime, cut deployment time by \factExpCodestudioDeploy{} by reworking the CI/CD pipelines, and moved 5 client environments onto Docker.}
     \resitem{Wrote JavaScript/TypeScript and Python (Django) backends used by thousands of people a day.}
 \end{itemize}
 
 \datedsubsection{AI Code Reviewer / RLHF Evaluator}{Oct 2024 -- Jan 2026}
 \textit{Outlier} \href{https://www.linkedin.com/company/try-outlier/}{\small\faExternalLink*} (remote)
 \begin{itemize}
-    \resitem{Reviewed code for AI systems used by 50,000+ people a day; evaluated and annotated large language model responses for correctness, consistency and safety.}
+    \resitem{Reviewed code for AI systems used by \factExpOutlierUsers{} people a day; evaluated and annotated large language model responses for correctness, consistency and safety.}
 \end{itemize}
 
 \datedsubsection{Industrial Trainee}{Mar 2025}

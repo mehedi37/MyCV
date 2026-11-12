@@ -1,4 +1,5 @@
 \documentclass[10pt, a4paper]{article}
+\makeatletter\def\input@path{{modules/}{../modules/}{../../modules/}}\makeatother\input{facts} % numbers from facts/facts.toml
 
 % =====================================================================
 %  CV -- Dutch-Bangla Bank Limited
@@ -159,7 +160,7 @@ B.Sc. Engineering in Computer Science \& Engineering (4-year)
   & Rajshahi University of Engineering \& Technology (RUET)
   & RUET
   & 2024$^{*}$
-  & \textbf{3.75} / 4.00 (Honours) \\
+  & \textbf{\factEduCgpa{}} / \factEduScale{} (Honours) \\
 \hline
 Higher Secondary Certificate (HSC), Science
   & Police Lines School \& College, Rangpur
@@ -185,12 +186,12 @@ Secondary School Certificate (SSC), Science
 \datedsubsection{Software Engineer II --- Aamira Software Solutions}{Jan 2025 -- Present}
 \textit{Kokomo, Indiana, USA (remote)} \href{\urlAamira}{\small\faExternalLink*}
 
-Raised client response rates by 30\% by leading development of a customer relationship management platform. Cut system response time by 40\% by designing and implementing a service-oriented backend architecture. Improved application performance by 60\% by restructuring database queries.
+Raised client response rates by \factExpAamiraCrm{} by leading development of a customer relationship management platform. Cut system response time by 40\% by designing and implementing a service-oriented backend architecture. Improved application performance by 60\% by restructuring database queries.
 
 \datedsubsection{Junior Software Engineer --- Code Studio}{Nov 2022 -- Apr 2024}
 \textit{Rajshahi, Bangladesh} \href{\urlCodeStudio}{\small\faExternalLink*}
 
-Kept a 12-server Linux infrastructure at 99.8\% uptime and cut deployment time by 40\% through streamlined release processes. Standardised deployment across 5 client environments, cutting configuration errors and support overhead. Built and maintained backend systems serving thousands of daily users while studying full time.
+Kept a \factExpCodestudioServers{}-server Linux infrastructure at \factExpCodestudioUptime{} uptime and cut deployment time by \factExpCodestudioDeploy{} through streamlined release processes. Standardised deployment across 5 client environments, cutting configuration errors and support overhead. Built and maintained backend systems serving thousands of daily users while studying full time.
 
 % --- Core Competencies ---
 \section{Core Competencies}
@@ -217,7 +218,7 @@ Kept a 12-server Linux infrastructure at 99.8\% uptime and cut deployment time b
 \datedsubsection{B.Sc. Thesis --- TRACE: A Multi-Modal Framework \\ for Curriculum Bottleneck Detection}{Jul 2025 -- Aug 2026}
 \textit{Department of CSE, RUET}
 
-Asked which university courses hold students back, and built a statistical framework combining network analysis, Bayesian modelling, and sentiment analysis to find them (F-measure 0.75 on a synthetic benchmark). Ran a causal check on 23,369 student records with backdoor-adjustment regression, bootstrap confidence intervals and sensitivity analysis, an approach applicable to risk and portfolio analytics.
+Asked which university courses hold students back, and built a statistical framework combining network analysis, Bayesian modelling, and sentiment analysis to find them. On simulated curricula, merging the three signals' shortlists reached a top-8 precision of \factLakMerge{} against \factLakAverage{} for averaging them, when each planted problem course showed up in only one signal. Ran a causal check on \factTraceStudents{} student records with backdoor-adjustment regression, bootstrap confidence intervals and sensitivity analysis, an approach applicable to risk and portfolio analytics.
 
 % --- Selected Projects ---
 \section{Selected Projects}

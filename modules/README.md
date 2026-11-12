@@ -5,6 +5,9 @@ Shared building blocks for the modular CVs. Edit a module once and every CV that
 
 ```
 modules/
+├── facts.tex             GENERATED from facts/facts.toml: every number, date and the
+│                         LAK status as macros (\factLakMerge, \factExpYears, \factLakIs ...).
+│                         Never type those values into a CV; see facts/README.md
 ├── preamble.tex          packages, colors, section style, page-break rules,
 │                         contact details (\cvname, \cvphone, ...) and the two headers
 ├── experience/           aamira, code_studio, outlier, brainstation, rapl
@@ -40,11 +43,11 @@ Then the body picks a header and the modules it needs:
 \input{experience/code_studio}
 % \input{experience/outlier}  % only in academic/lecturer CVs
 \input{experience/brainstation}
-\section{Skills}
-\input{skills/software}       % or write tailored rows inline
 \section{Selected Projects}
 \input{projects/omnious}      % Omnious first when included
 \input{projects/studentai}
+\section{Skills}
+\input{skills/software}       % or write tailored rows inline
 \section{Education}
 \def\eduthesisline{}          % adds the thesis line (job CVs without a Research section)
 % \def\educoursework{}        % adds key coursework (academic CVs)

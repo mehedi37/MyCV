@@ -36,6 +36,8 @@
 \pagestyle{empty} % No page numbers
 \setlength{\parindent}{0pt} % No paragraph indentation
 \setlength{\parskip}{0.3em} % Reduced space between paragraphs
+\hyphenpenalty=10000 \exhyphenpenalty=10000 % Never split a word across lines
+\emergencystretch=3em                       % ...and let lines stretch a little instead
 
 % SECTION FORMATTING ==========================================
 \titleformat{\section}
@@ -106,3 +108,6 @@
     \faGlobe \href{\cvsite}{\hspace{0.5mm}mehedi-hasan-maruf.me}
   \end{center}
 }
+
+% Numbers, dates and the LAK status, generated from facts/facts.toml (\factLakMerge, ...).
+\input{facts}

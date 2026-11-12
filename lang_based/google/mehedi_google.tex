@@ -18,6 +18,7 @@
 % =====================================================================
 
 \documentclass[10pt, a4paper]{article}
+\makeatletter\def\input@path{{modules/}{../modules/}{../../modules/}}\makeatother\input{facts} % numbers from facts/facts.toml
 
 % PACKAGES ===================================================
 \usepackage[a4paper, margin=0.75in]{geometry} % Page margins
@@ -115,16 +116,7 @@
 % --- Education ---
 \section{Education}
 \datedsubsection{B.Sc. Engineering in CSE}{Graduated: 08/2026}
-\textit{Rajshahi University of Engineering \& Technology (RUET)} \textbar\ CGPA: 3.75 / 4.00, Honours
-
-% --- Skills ---
-\section{Skills}
-\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
-    \item[AI/ML:] PyTorch (GNNs), Transformers, LangChain, RAG, NLP, causal inference (DoWhy), Bayesian
-    \item[Languages:] Python, C++, TypeScript, JavaScript, SQL
-    \item[CS Fundamentals:] Data Structures \& Algorithms, Graph Algorithms, Number Theory, Software Design
-    \item[Systems \& Tools:] Linux, Docker, CI/CD, FastAPI, Django, Next.js (React), PostgreSQL
-\end{description}
+\textit{Rajshahi University of Engineering \& Technology (RUET)} \textbar\ CGPA: \factEduCgpa{} / \factEduScale{}, Honours
 
 % --- Experience ---
 \section{Experience}
@@ -133,15 +125,15 @@
 % TODO: each bullet says WHAT and HOW MUCH; add the concrete HOW (caching?
 % query indexes? service split?) so it survives interview follow-ups.
 \begin{itemize}
-    \resitem{Raised client response rates by 30\% by leading development of a CRM system.}
-    \resitem{Cut API response time by 40\% by architecting and implementing a TypeScript microservice backend.}
+    \resitem{Raised client response rates by \factExpAamiraCrm{} by leading development of a CRM system.}
+    \resitem{Cut API response time by \factExpAamiraApi{} by architecting and implementing a TypeScript microservice backend.}
     \resitem{Improved application performance by 60\% by profiling and optimizing PostgreSQL/Supabase database queries.}
 \end{itemize}
 
 \datedsubsection{Junior Software Engineer}{Nov 2022 -- Apr 2024}
 \textit{Code Studio} \href{\urlCodeStudio}{\small\faExternalLink*}, Rajshahi, Bangladesh
 \begin{itemize}
-    \resitem{Kept 12 Linux servers at 99.8\% uptime; cut deployment time by 40\% with CI/CD and Docker across 5 client setups.}
+    \resitem{Kept \factExpCodestudioServers{} Linux servers at \factExpCodestudioUptime{} uptime; cut deployment time by \factExpCodestudioDeploy{} with CI/CD and Docker across 5 client setups.}
     \resitem{Built Python (Django) and JavaScript/TypeScript backends supporting thousands of daily users.}
 \end{itemize}
 
@@ -151,8 +143,8 @@
 \textit{B.Sc. Thesis, Dept. of CSE, RUET}
 \begin{itemize}
     \resitem{Built a Python framework that ranks the courses holding students back, from prerequisite-graph position (NetworkX, GAT in PyTorch), Bayesian fail rates, and feedback sentiment (DeBERTa/VADER).}
-    \resitem{Reached F-measure 0.75 and NDCG@10 0.81 on a reproducible synthetic benchmark with planted bottlenecks.}
-    \resitem{DoWhy causal check on 23,369 OULAD students: 19.9-point effect of high assignment engagement on pass rates ($p<0.01$).}
+    \resitem{On simulated curricula, merging signal shortlists beat rank averaging when each planted bottleneck showed up in one signal (top-8 precision \factLakMerge{} vs \factLakAverage{}), and lost when they showed up in all three.}
+    \resitem{DoWhy causal check on \factTraceStudents{} OULAD students: \factTraceEffect{}-point effect of high assignment engagement on pass rates ($p<0.01$).}
     \resitem{Under review at LAK 2027: \textit{When Agreement Misleads: Auditing Course Shortlists in Curriculum Analytics}.}
 \end{itemize}
 
@@ -168,6 +160,15 @@
 \begin{itemize}
     \resitem{Built a RAG learning assistant (Python/FastAPI, LangChain, Next.js) with semantic retrieval, conversation memory, multimodal ingestion (PDF, image, video), and quiz generation.}
 \end{itemize}
+
+% --- Skills ---
+\section{Skills}
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.2ex]
+    \item[AI/ML:] PyTorch (GNNs), Transformers, LangChain, RAG, NLP, causal inference (DoWhy), Bayesian
+    \item[Languages:] Python, C++, TypeScript, JavaScript, SQL
+    \item[CS Fundamentals:] Data Structures \& Algorithms, Graph Algorithms, Number Theory, Software Design
+    \item[Systems \& Tools:] Linux, Docker, CI/CD, FastAPI, Django, Next.js (React), PostgreSQL
+\end{description}
 
 % --- Achievements ---
 \section{Certifications \& Achievements}
